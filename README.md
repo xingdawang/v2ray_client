@@ -16,7 +16,7 @@ A brief description of your project, including its purpose and functionality.
 1. Clone the repository to your local machine:
 
     ```bash
-    git clone https://github.com/yxingdawang/v2ray_client.git
+    git clone https://github.com/xingdawang/v2ray_client.git
     ```
 
 2. Navigate to the project directory:

@@ -103,4 +103,4 @@ Cargo.lock
 
 # Exclude staticfiles/CACHE directory
 /staticfiles/CACHE/
-/cluster/static/db/
+/cluster/static/db/*.db

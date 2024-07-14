@@ -3,7 +3,7 @@ django-crontab>=0.7.1
 django-compressor>=4.5
 fabric>=3.2.2
 libsass>=0.23.0
-openpyxl>=3.0.10
+openpyxl==3.0.10
 pandas>=2.0.3
 paramiko>=3.4.0
 python-dotenv>=0.21.0
