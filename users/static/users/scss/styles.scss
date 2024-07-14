@@ -1,0 +1,81 @@
+/* users/static/users/scss/styles.scss */
+
+/*$body-bg: #f8f9fa;
+$font-stack: Arial, sans-serif;
+$primary-color: #007bff;
+$hover-color: #0056b3;
+
+body {
+    font-family: $font-stack;
+    background-color: $body-bg;
+}
+
+h2 {
+    color: #343a40;
+}
+
+form {
+    margin-top: 20px;
+}
+
+form input {
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+form button {
+    padding: 5px 10px;
+    background-color: $primary-color;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: $hover-color;
+}*/
+
+html, body {
+    height: 100%;
+}
+
+.guide-image-height {
+    max-height: 600px;
+    width: auto;
+}
+
+.guide-image-width {
+    max-width: 600px;
+    height: auto;
+}
+
+.service-image {
+    max-width: 400px;
+    height: 300px;
+}
+
+.service-feature {
+    margin: 20px 0;
+}
+
+.wrapper {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.content {
+    flex: 1;
+}
+.footer {
+    background-color: #f8f9fa;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 40px;
+}
+
+#copied-message {
+    display: none;
+    color: blue;
+    margin-top: 10px;
+}

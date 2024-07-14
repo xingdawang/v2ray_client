@@ -1,0 +1,18 @@
+from django.contrib.auth.models import AbstractUser
+from django.db import models
+from django.utils import timezone
+from cluster.models import ProtocalConfig
+
+class CustomUser(AbstractUser):
+    
+    protocol_config = models.ForeignKey('cluster.ProtocalConfig', on_delete=models.SET_NULL, null=True, blank=True, related_name='users')
+
+    reset_token = models.CharField(max_length=32, null=True, blank=True)
+    reset_token_expiry = models.DateTimeField(null=True, blank=True)
+
+    def generate_reset_token(self):
+        token = get_random_string(length=32)
+        self.reset_token = token
+        self.reset_token_expiry = timezone.now() + timedelta(minutes=10)
+        self.save()
+        return token

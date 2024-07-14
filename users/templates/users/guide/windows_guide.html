@@ -1,0 +1,68 @@
+{% extends '../base.html' %}
+
+{% block title %} Windows配置 {% endblock %}
+
+{% load static %}
+{% block content %}
+
+	<!-- Download -->
+	<div class="card mt-4">
+		<div class="card-header">
+			<h3>下载</h3>
+		</div>
+		<div class="card-body">
+			<h5 class="card-title">V2rayN下载</h5>
+			<p class="card-text">Windows 客户端 ，推荐使用v2rayN：<a href="https://v2rayn.org/v2rayn-download/" target="_blank">https://v2rayn.org/v2rayn-download/</a></p>
+			<a href="https://v2rayn.org/v2rayn-download/" target="_blank" class="btn btn-primary">跳转链接</a>
+		</div>
+	</div>
+
+	<!-- Config -->
+	<div class="card mt-4">
+		<div class="card-header">
+			<h3>运行与配置</h3>
+		</div>
+		<div class="card-body">
+			<div class="row">
+				<div class="col-sm-6">
+					<div class="card">
+						<div class="card-body">
+							<h5 class="card-title">步骤1</h5>
+							<img src="{% static 'users/img/windows_config_1.jpeg' %}" class="card-img-top guide-image-width" alt="Windows Config Step 1">
+							<p class="card-text">下载软件包后，解压缩释放到本地硬盘。选中v2rayN.exe文件，双击运行。</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-6">
+					<div class="card">
+						<div class="card-body">
+							<h5 class="card-title">步骤1 (管理员运行)</h5>
+							<img src="{% static 'users/img/windows_config_2.jpeg' %}" class="card-img-top guide-image-width" alt="Windows Config Step 2">
+							<p class="card-text">直接双击是以非管理员身份运行，也可以右键点击用管理员身份运行。</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-6 mt-4">
+					<div class="card">
+						<div class="card-body">
+							<h5 class="card-title">步骤2</h5>
+							<img src="{% static 'users/img/windows_config_3.jpeg' %}" class="card-img-top guide-image-width" alt="Windows Config Step 3">
+							<p class="card-text">点击服务器按钮</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-6 mt-4">
+					<div class="card">
+						<div class="card-body">
+							<h5 class="card-title">步骤3</h5>
+							<img src="{% static 'users/img/windows_config_4.jpeg' %}" class="card-img-top guide-image-width" alt="Windows Config Step 4">
+							<p class="card-text">最简单添加服务器方法，是从剪贴板或扫描屏幕上的二维码。</p>
+							<p class="card-text">成功导入服务器后，在右下角系统托盘内找到v2rayN软件图标。如果导入了多个服务器，可以在这里选择使用。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+{% endblock %}

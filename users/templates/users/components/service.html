@@ -1,0 +1,110 @@
+{% extends "../base.html" %}
+
+{% load static %}
+
+{% block title %} 服务与保障 {% endblock %}
+
+{% block content %}
+
+<div class="card mt-4">
+	<div class="card-header">
+		<h2>服务与产品优势</h2>
+	</div>
+	<div class="card-body">
+		<div class="row">
+			<div class="col-sm-4">
+				<div class="card">
+					<div class="card-body">
+						<img src="{% static 'users/img/highly_customizable.jpeg' %}" class="card-img-top service-image" alt="highly customizable">
+						<h3 class="card-title">按需定制</h3>
+						<p class="card-text">提供1对1架构师服务，涵盖迁云咨询、技术指导、架构建议及技术协助等全栈式支持。我们的资深架构师将根据您的具体需求，提供定制化解决方案，确保系统高效、稳定、安全运行，助力企业数字化转型。</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-sm-4">
+				<div class="card">
+					<div class="card-body">
+						<img src="{% static 'users/img/quick_response.jpeg' %}" class="card-img-top service-image" alt="quick response service">
+						<h3 class="card-title">即时运维服务</h3>
+						<p class="card-text">专业售后运维团队，即时响应客户需求，确保系统稳定运行，提供全天候监控和技术支持，快速解决故障，优化性能，保障业务连续性，实现客户利润最大化。</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-4">
+				<div class="card">
+					<div class="card-body">
+						<img src="{% static 'users/img/types_of_networks.jpeg' %}" class="card-img-top service-image" alt="all types of networks">
+						<h3 class="card-title">全场景网络</h3>
+						<p class="card-text">针对直播、账号养护等多种跨境业务需求，提供全面的产品和服务器解决方案。一站式服务精准定位客户痛点，确保高效、稳定的业务运营，满足客户的多样化需求。</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row mt-4">
+			<div class="col-sm-6">
+				<div class="card">
+					<div class="card-header">
+						<h4 class="text-center">产品亮点</h4>
+					</div>
+					<div class="card-body">
+						<div class="service-feature">
+							<h5 class="text-primary">
+								<i class="bi bi-check2-square"></i>
+							 	快速低延迟
+							</h5>
+							<p>专业电信国际专线线路，具备低延时，快速访问特性，保证TikTok直播国际访问速度。</p>
+						</div>
+						<div class="service-feature">
+							<h5 class="text-primary">
+								<i class="bi bi-check2-square"></i>
+								直播无限制
+							</h5>
+							<p>通过专业电信国际专线云加速技术处理，让TikTok直播不受区域国家限制，我们可以随时随地通过TikTok开展全球性业务。</p>
+						</div>
+						<div class="feature">
+							<h5 class="text-primary">
+								<i class="bi bi-check2-square"></i>
+								安全稳定
+							</h5>
+							<p>对应国家独立原生IP专线专用，专业电信国际专线加速云端技术综合处理，线路路由安全稳定，保证TikTok账号运营体验更好，避免视频的播放量被黑屏子和封号。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-6">
+				<div class="card">
+					<div class="card-header">
+						<h4 class="text-center">产品优势</h4>
+					</div>
+					<div class="card-body">
+						<div class="service-feature">
+							<h5 class="text-primary">
+								<i class="bi bi-check2-square"></i>
+							 	独立原生IP专线专机专用
+							</h5>
+							<p>TikTok账号独立原生IP专线专机专用，一对一独享账号对应国家原生IP，防止账号被风控。</p>
+						</div>
+						<div class="service-feature">
+							<h5 class="text-primary">
+								<i class="bi bi-check2-square"></i>
+								稳定快速
+							</h5>
+							<p>海外网络专线稳定快速，电信专线出口，支持快速访问TikTok国际网络，0卡顿，助力业务发展。</p>
+						</div>
+						<div class="feature">
+							<h5 class="text-primary">
+								<i class="bi bi-check2-square"></i>
+								国家定位
+							</h5>
+							<p>对应国家线路运营对应的TikTok账号，保证TikTok账号运营国家定位，让视频推广或直播引流精准。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends './base.html' %}
+
+{% block title %}登陆{% endblock %}
+
+{% block content %}
+<h2>登陆</h2>
+
+{% if error_message %}
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+  {{ error_message }}
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{% endif %}
+
+<form method="POST" novalidate>
+    {% csrf_token %}
+
+    <div class="form-floating mb-3">
+        <input type="text" class="form-control {% if form.username.errors %}is-invalid{% endif %}" id="id_username" value="{{ username }}" name="username" placeholder="用户名">
+        <label for="id_username" class="form-label">用户名</label>
+        <div class="invalid-feedback">
+            {% for error in form.username.errors %}
+                {{ error }}
+            {% endfor %}
+        </div>
+    </div>
+    
+    <div class="form-floating  mb-3">
+        <input type="password" class="form-control {% if form.password.errors %}is-invalid{% endif %}" id="id_password" name="password" placeholder="密码">
+        <label for="id_password" class="form-label">密码</label>
+        <div class="invalid-feedback">
+            {% for error in form.password.errors %}
+                {{ error }}
+            {% endfor %}
+        </div>
+    </div>
+    
+    <div class="mb-3">
+        <button type="submit" class="btn btn-primary">登陆</button>     
+    </div>
+    <div class="mb-3">
+        <p>新用户<a href="/register" class="link-underline-primary link-offset-1"> 点此注册</a></p>
+        <p>忘记密码<a href="/reset_password" class="link-underline-primary link-offset-1"> 邮件找回</a></p>
+    </div>
+</form>
+    
+{% endblock %}

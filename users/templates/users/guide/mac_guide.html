@@ -1,0 +1,117 @@
+{% extends '../base.html' %}
+
+{% block title %} Mac配置 {% endblock %}
+
+{% load static %}
+{% block content %}
+
+	<!-- Install -->
+	<div class="card mt-4">
+		<div class="card-header">
+			<h3>下载</h3>
+		</div>
+		<div class="card-body">
+			<h5 class="card-title">V2rayU</h5>
+			<p class="card-text">Mac桌面端推荐使用V2rayU:</p>
+			<ul>
+				<li><p class="card-text">英特尔CPU请选择：<a href="https://github.com/yanue/V2rayU/releases/download/v4.2.2/V2rayU-64.dmg" target="_blank">hV2rayU-64.dmg</a></p></li>
+				<li><p class="card-text">苹果芯片系列请选择：<a href="https://github.com/yanue/V2rayU/releases/download/v4.2.2/V2rayU-arm64.dmg" target="_blank">V2rayU-arm64.dmg</a></p></li>
+			</ul>
+			<a href="https://sourceforge.net/projects/v2rayu.mirror/" target="_blank" class="btn btn-primary">V2RayU sourceforge 镜像</a>
+		</div>
+		<div class="card-body">
+			<h5 class="card-title">Shadowrocket（小火箭）</h5>
+			<p class="card-text">mac silicon系列已经支持iOS应用，在Apple Store下载后，可以使用iOS应用 Shadowrocket（小火箭）全局代理，进行链接。</p>
+		</div>
+
+		<div class="card-body">
+			<h5 class="card-title">V2BOX 下载</h5>
+			<p class="card-text">mac silicon系列已经支持iOS应用，在Apple Store下载后，可以使用iOS应用 V2BOX 全局代理，进行链接。</p>
+		</div>
+	</div>
+
+	<!-- Install -->
+	<div class="card mt-4">
+		<div class="card-header">
+			<h3>安装</h3>
+		</div>
+		<div class="card-body">
+			<div class="row">
+				<div class="col-sm-6">
+					<div class="card">
+						<div class="card-body">
+							<h5 class="card-title">步骤1</h5>
+							<img src="{% static 'users/img/mac_config_1.jpeg' %}" class="card-img-top guide-image-width" alt="Mac Config Step 1">
+							<p class="card-text">在非App Store下载的应用会出触发隐私告警。</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-6">
+					<div class="card">
+						<div class="card-body">
+							<h5 class="card-title">步骤2</h5>
+							<img src="{% static 'users/img/mac_config_2.jpeg' %}" class="card-img-top guide-image-width" alt="Mac Config Step 2">
+							<p class="card-text">在设置 -> 隐私性与安全中，选择仍要打开。</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-6">
+					<div class="card">
+						<div class="card-body">
+							<h5 class="card-title">步骤3</h5>
+							<img src="{% static 'users/img/mac_config_3.jpeg' %}" class="card-img-top guide-image-width" alt="Mac Config Step 3">
+							<p class="card-text">安装成功后开启V2rayU，Mac右上角显示灰色图标</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Config -->
+	<div class="card mt-4">
+		<div class="card-header">
+			<h3>配置</h3>
+		</div>
+		<div class="card-body">
+			<div class="row">
+				<div class="col-sm-6">
+					<div class="card">
+						<div class="card-body">
+							<h5 class="card-title">步骤1</h5>
+							<img src="{% static 'users/img/mac_config_4.jpeg' %}" class="card-img-top guide-image-height" alt="Mac Config Step 4">
+							<p class="card-text">右键点击v2rayU图标，选择配置。</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-6">
+					<div class="card">
+						<div class="card-body">
+							<h5 class="card-title">步骤2</h5>
+							<img src="{% static 'users/img/mac_config_5.jpeg' %}" class="card-img-top guide-image-height" alt="Mac Config Step 5">
+							<p class="card-text">链接方式（如图）</p>
+							<ol>
+								<li><p class="card-text">在配置界面，点击 ➕ 号</p></li>
+								<li><p class="card-text">在配置界面右上角导入链接</p></li>
+								<li><p class="card-text">复制链接到配置框</p></li>
+								<li><p class="card-text">点击导入，导入后下方会自动解析配置</p></li>
+								<li><p class="card-text">点击左侧OK保存</p></li>
+							</ol>
+							<p class="card-text">也可选择扫描屏幕中二维码的方式（左侧截图中，需开启系统权限）</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-6 mt-4">
+					<div class="card">
+						<div class="card-body">
+							<h5 class="card-title">步骤3</h5>
+							<img src="{% static 'users/img/mac_config_6.jpeg' %}" class="card-img-top guide-image-height" alt="Mac Config Step 3">
+							<p class="card-text">选择全局代理，且服务开启（图标黑色），即表示服务开启</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+{% endblock %}

@@ -1,0 +1,106 @@
+# macOS-specific ignores
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Thumbnails
+._*
+
+# macOS files
+.Spotlight-V100
+.Trashes
+.DS_Store?
+._*
+.SafariSafeBrowsing
+
+# Python-specific ignores
+*.py[cod]
+*.$py.class
+
+# Django-specific ignores
+*.log
+*.pot
+*.pyc
+__pycache__/
+local_settings.py
+db.sqlite3
+media/
+
+# Virtualenv
+venv/
+ENV/
+env/
+.venv/
+
+# PyCharm
+.idea/
+*.iml
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# Pytest
+.cache
+
+# MyPy
+.mypy_cache/
+
+# Coverage reports
+htmlcov/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# PEP 582; used by e.g. github.com/David-OConnor/pyflow
+__pypackages__/
+
+# Environments
+.env
+.env.*
+
+# pyenv
+.python-version
+
+# celery beat schedule file
+celerybeat-schedule
+
+# SageMath parsed files
+*.sage.py
+
+# Environments and build files
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Flask stuff:
+instance/
+.webassets-cache
+
+# Scrapy stuff:
+.scrapy
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+target/
+
+# C extensions
+*.so
+
+# Rust
+Cargo.lock
+
+# Exclude all .pem files in the pem folder at the root directory
+/pem/*.pem
+
+# Exclude staticfiles/CACHE directory
+/staticfiles/CACHE/
+/cluster/static/db/
