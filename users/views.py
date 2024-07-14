@@ -43,6 +43,8 @@ def _send_new_user_welcome_notification(username, email, date_joined):
         f'用户名: {username}\n'
         f'邮箱: {email}\n'
         f'注册时间: {formatted_date_joined}\n\n'
+        f'请返回我们的网站，在"个人信息"中查看配置链接。\n'
+        f'请悉知：首次注册后，需要等待我们的运营人员为您分配定制化配置信息。\n\n'
         f'如果您有任何问题或需要帮助，请随时联系我们。\n\n'
         f'祝好，\n'
         f'我们的产品团队'
