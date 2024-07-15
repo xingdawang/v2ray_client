@@ -2,7 +2,6 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.forms import AuthenticationForm, PasswordChangeForm, PasswordResetForm
 from django.contrib.auth import authenticate, login, logout, update_session_auth_hash, get_user_model
 from django.contrib.auth.decorators import login_required
-from django.contrib import messages
 from django.core.mail import send_mail
 from django.conf import settings
 from django.utils.crypto import get_random_string
@@ -22,8 +21,8 @@ def _send_new_user_notification(username, email, date_joined):
     User = get_user_model()
     staff_users = User.objects.filter(is_staff=True)
     
-    subject = '新用户注册通知'
-    message = f'新用户注册\n\n用户名: {username}\n邮箱: {email}\n注册时间: {formatted_date_joined}'
+    subject = f'新用户 {username} 已注册，请尽快分配配置'
+    message = f'新用户注册信息\n\n用户名: {username}\n邮箱: {email}\n注册时间: {formatted_date_joined}'
     from_email = settings.EMAIL_HOST_USER
     recipient_list = [user.email for user in staff_users]
     
@@ -43,8 +42,9 @@ def _send_new_user_welcome_notification(username, email, date_joined):
         f'用户名: {username}\n'
         f'邮箱: {email}\n'
         f'注册时间: {formatted_date_joined}\n\n'
-        f'请返回我们的网站，在"个人信息"中查看配置链接。\n'
-        f'请悉知：首次注册后，需要等待我们的运营人员为您分配定制化配置信息。\n\n'
+        f'接下来请返回我们的网站，您需要完成设备的网络配置，您可以在"配置"中查看相关指引。\n'
+        f'您也可以在"个人资料"中查看已分配的配置链接。\n'
+        f'请悉知：首次注册后，需要等待我们的运营人员为您分配定制后配置信息。\n\n'
         f'如果您有任何问题或需要帮助，请随时联系我们。\n\n'
         f'祝好，\n'
         f'我们的产品团队'
@@ -66,7 +66,6 @@ def register(request):
             username = form.cleaned_data.get('username')
             password = form.cleaned_data.get('password1')
             
-            messages.success(request, f'Account created for {username}!')
             user = authenticate(username=username, password=password)
             if user is not None:
                 login(request, user)
@@ -78,7 +77,7 @@ def register(request):
                 date_joined = user.date_joined
                 _send_new_user_notification(username, email, date_joined)
                 _send_new_user_welcome_notification(username, email, date_joined)
-                return redirect('users:home')
+                return redirect('users:profile')
     else:
         form = UserRegisterForm()
     return render(request, 'users/register.html', {

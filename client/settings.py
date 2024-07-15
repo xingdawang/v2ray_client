@@ -10,14 +10,6 @@ SERVER_CONFIG = {
     'PEM_FILE_PATH': os.path.join(os.path.dirname(__file__), '..', 'pem', 'v2ray-california.pem'),
 }
 
-MESSAGE_TAGS = {
-    messages.DEBUG: 'debug',
-    messages.INFO: 'info',
-    messages.SUCCESS: 'success',
-    messages.WARNING: 'warning',
-    messages.ERROR: 'danger',
-}
-
 AUTH_USER_MODEL = 'users.CustomUser'
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -34,8 +26,8 @@ ALLOWED_HOSTS = ['127.0.0.1', '18.144.86.227', '192.168.1.23']
 # defined crontab jobs
 
 CRONJOBS = [
-    ('* * * * *', 'cluster.tasks.request_remote_db'),
     ('* * * * *', 'cluster.tasks.save_config'),
+    ('* * * * *', 'cluster.tasks.request_remote_db'),  
 ]
 
 # Application definition

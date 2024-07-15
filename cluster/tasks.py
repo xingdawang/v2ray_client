@@ -8,21 +8,14 @@ from django.conf import settings
 
 logger = logging.getLogger('users.tasks')
 
-# def test():
-#     logger.debug('*'*100)
-#     logger.debug('in test')
-#     print('*'*100)
-#     print('in test')
-
-def delete_files_in_directory(directory):
+def delete_db_files_in_directory(directory):
     for filename in os.listdir(directory):
         file_path = os.path.join(directory, filename)
         try:
-            if os.path.isfile(file_path) or os.path.islink(file_path):
+            if os.path.isfile(file_path) and file_path.endswith('.db'):
                 os.unlink(file_path)
             elif os.path.isdir(file_path):
-                delete_files_in_directory(file_path)
-                os.rmdir(file_path)
+                delete_db_files_in_directory(file_path)
         except Exception as e:
             print(f"Failed to delete {file_path}. Reason: {e}")
 
@@ -39,7 +32,7 @@ def request_remote_db():
     local_path = os.path.join(os.path.dirname(__file__), 'static', 'db')
 
     # clear db folder before download
-    delete_files_in_directory(local_path)
+    delete_db_files_in_directory(local_path)
 
     # define aws pem file location, e.g. client/users/../pem/v2ray-california.pem
     pem_file_path = settings.SERVER_CONFIG['PEM_FILE_PATH']
