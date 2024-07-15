@@ -83,6 +83,85 @@ V2ray Web Client with admin backend to distribute ISP and x-ui configurations.
     python manage.py createsuperuser
     ```
 
+6. Run the server backend and no hug up
+
+    Inside the project root folder, run: 
+    
+    ```bash
+    nohup python manage.py runserver 0.0.0.0:8000 &
+    ```
+
+    This let the website runs background, and you can see the website from the browser, in the mean time, you will notice there is a nohup.out file generated automatically.
+
+
+
+7. Install and config Nginx
+
+    As the website has run already, we need to bind 8000 to 80 with Nginx.
+
+    7.1 Installation
+    ```bash
+    sudo yum install nginx
+    ```
+    
+    Nginx config location: `/etc/nginx/config.d/`, any configuration end with `.conf`
+
+    Create a configuration file for server, e.g. `/etc/nginx/config.d/dango_link2globe.com.conf`, the content inside:
+
+    ```bash
+    server {
+        listen 80;
+        server_name 34.214.109.145;  # replace with your server IP or public dns
+
+        location / {
+            proxy_pass http://127.0.0.1:8000;  # local address and port
+            proxy_set_header Host $host;
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+
+            proxy_connect_timeout 600;
+            proxy_send_timeout 600;
+            proxy_read_timeout 600;
+            send_timeout 600;
+
+            client_max_body_size 20M;  # maximum upload file zie
+        }
+
+        location /static/ {
+            alias /var/www/link2globe.com/static/;  # static file location
+        }
+    }
+    ```
+
+    Note: the above `static` folder should match the project settings.py (e.g. `v2ray_client/client/settings.py`) folder.
+
+    Inside `v2ray_client/client/settings.py`, make sure this line match above `static` location.
+    
+    ```bash
+    STATIC_ROOT = '/var/www/link2globe.com/static'
+    ```
+    7.2 Config project
+
+    After installed nginx, go back to the project folder (e.g. `v2ray_client/client`), and push the static files to the `static` folder
+
+    ```bash
+    python manage.py collectstatic
+    ```
+
+    Be noticed that the `static` folder may need 777 permission.
+    ```bash
+    sudo chmod 777 -R /var/www/link2globe.com/static
+    ```
+
+    7.3 restart nginx server and check
+
+    ```bash
+    sudo systemctl restart nginx
+    sudo systemctl status nginx
+    ```
+
+
+
 ## Running
 
 1. Add, remove and check Crontab

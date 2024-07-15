@@ -21,12 +21,12 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', '34.214.109.145', '192.168.1.23']
+ALLOWED_HOSTS = ['127.0.0.1', '34.214.109.145', '192.168.1.23', 'link2globe.com', 'www.link2globe.com']
 
 # defined crontab jobs
 
 CRONJOBS = [
-    ('* * * * *', 'cluster.tasks.request_remote_db'), 
+    ('* * * * *', 'cluster.tasks.request_remote_db'),
     ('* * * * *', 'cluster.tasks.save_config'),
 ]
 
@@ -139,7 +139,9 @@ LOCALE_PATHS = [
 
 # Static files (CSS, JavaScript, Images)
 STATIC_URL = '/static/'
-STATIC_ROOT = BASE_DIR / 'staticfiles'
+# STATIC_ROOT = BASE_DIR / 'staticfiles'
+# use this static folder for img, js and css, be careful chmod 777 for folder static
+STATIC_ROOT = '/var/www/link2globe.com/static'
 
 # Compressor settings
 COMPRESS_ROOT = STATIC_ROOT
