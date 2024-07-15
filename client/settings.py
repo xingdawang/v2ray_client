@@ -7,7 +7,7 @@ load_dotenv()
 
 SERVER_CONFIG = {
     'USER': os.getenv('SERVER_CONFIG_USER'),
-    'PEM_FILE_PATH': os.path.join(os.path.dirname(__file__), '..', 'pem', 'v2ray-california.pem'),
+    'PEM_FILE_PATH': os.path.join(os.path.dirname(__file__), '..', 'pem', 'v2ray-oregon.pem'),
 }
 
 AUTH_USER_MODEL = 'users.CustomUser'
@@ -21,13 +21,13 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', '18.144.86.227', '192.168.1.23']
+ALLOWED_HOSTS = ['127.0.0.1', '34.214.109.145', '192.168.1.23']
 
 # defined crontab jobs
 
 CRONJOBS = [
+    ('* * * * *', 'cluster.tasks.request_remote_db'), 
     ('* * * * *', 'cluster.tasks.save_config'),
-    ('* * * * *', 'cluster.tasks.request_remote_db'),  
 ]
 
 # Application definition
