@@ -172,6 +172,13 @@ V2ray Web Client with admin backend to distribute ISP and x-ui configurations.
    python manage.py crontab show
    ```
 
+   You can also manually run a job with:
+   
+   ```bash
+   python manage.py crontab run hash_id
+   ```
+
+
 2. Import AWS pem files
 
    In the project root folder, create a pem folder with necessary pem file inside, and update `client/settings.py` `SERVER_CONFIG` section.
@@ -182,6 +189,12 @@ V2ray Web Client with admin backend to distribute ISP and x-ui configurations.
 
 5. Start the Django development server:
 
-```bash
-python manage.py runserver 0.0.0.0:8000
-```
+    ```bash
+    python manage.py runserver 0.0.0.0:8000
+    ```
+
+    or with nohup running background
+
+    ```bash
+    nohup python manage.py runserver 0.0.0.0:8000 &
+    ```

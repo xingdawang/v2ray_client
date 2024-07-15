@@ -27,8 +27,7 @@ CSRF_TRUSTED_ORIGINS = ['https://www.link2globe.com', 'https://link2globe.com']
 # defined crontab jobs
 
 CRONJOBS = [
-    ('* * * * *', 'cluster.tasks.request_remote_db'),
-    ('* * * * *', 'cluster.tasks.save_config'),
+    ('* * * * *', 'cluster.tasks.download_and_save2db'),
 ]
 
 # Application definition

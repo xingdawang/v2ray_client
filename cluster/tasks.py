@@ -1,5 +1,6 @@
 from fabric import Connection
 import logging
+import paramiko
 import os, time, json, base64
 from .models import DbServer, ProtocalConfig
 import sqlite3
@@ -225,3 +226,9 @@ def save_config():
     #     \ndiscard_remark_pairs: {discard_remark_pairs}')
     # logger.debug(f'2nd current_db_pairs: {current_db_pairs}, \n2nd remote_db_pairs: {remote_db_pairs}')
 
+
+def download_and_save2db():
+    request_remote_db()
+    # wait 1 seconds to make sure file is ready
+    time.sleep(1)
+    save_config()
