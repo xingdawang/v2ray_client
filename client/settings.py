@@ -22,6 +22,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', '34.214.109.145', '192.168.1.23', 'link2globe.com', 'www.link2globe.com']
+CSRF_TRUSTED_ORIGINS = ['https://www.link2globe.com', 'https://link2globe.com']
 
 # defined crontab jobs
 
@@ -55,6 +56,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'client.middleware.Custom404Middleware',  # Add your custom middleware here
 ]
 
 ROOT_URLCONF = 'client.urls'
@@ -139,9 +141,9 @@ LOCALE_PATHS = [
 
 # Static files (CSS, JavaScript, Images)
 STATIC_URL = '/static/'
-# STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 # use this static folder for img, js and css, be careful chmod 777 for folder static
-STATIC_ROOT = '/var/www/link2globe.com/static'
+# STATIC_ROOT = '/var/www/link2globe.com/static'
 
 # Compressor settings
 COMPRESS_ROOT = STATIC_ROOT
