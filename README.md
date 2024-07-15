@@ -1,15 +1,55 @@
-# Project Name
+# V2ray Web Client
 
-A brief description of your project, including its purpose and functionality.
+V2ray Web Client with admin backend to distribute ISP and x-ui configurations.
 
 ## Table of Contents
-
+- [Environment](#environment)
 - [Installation](#installation)
 - [Running](#running)
-- [Testing](#testing)
-- [Technologies Used](#technologies-used)
-- [Contributing](#contributing)
-- [License](#license)
+
+## Environment
+
+1. Install, enable and check status of Crontab in AWS Linux
+
+    ```bash
+    sudo yum install cronie
+    sudo systemctl enable crond.service
+    sudo systemctl start crond.service
+    sudo systemctl status crond.service
+    ```
+2. Install Python, pip and create soft links
+
+    ```bash
+    sudo yum install python3.11 python3.11-pip
+
+    # setup soft link on Python and pip forcely on Python 3.11
+    sudo ln -sf /usr/bin/python3.11 /usr/bin/python
+    sudo ln -sf /usr/bin/pip3.11 /usr/bin/pip
+
+    # revert back default Python 3.9
+    sudo ln -sf /usr/bin/python3.9 /usr/bin/python
+    sudo ln -sf /usr/bin/pip3.9 /usr/bin/pip
+
+    # check Python verison
+    python --version
+    pip --version
+    ```
+
+3. Trouble shooting
+
+    `No module named 'dnf' when running yum or dnf`
+    
+    replace default `#!/usr/bin/python3` shebang in `/usr/bin/dnf` Python script with a specific one `#!/usr/bin/python3.9`.
+
+    `$ head -1 /usr/bin/dnf`
+    
+    #!/usr/bin/python3.9
+    
+    it works fine:
+
+    `$ dnf --version`
+    
+    4.14.0
 
 ## Installation
 
@@ -22,29 +62,22 @@ A brief description of your project, including its purpose and functionality.
 2. Navigate to the project directory:
 
     ```bash
-    cd your-project
+    cd v2ray_client 
     ```
 
-3. Create and activate a virtual environment:
-
-    ```bash
-    python3 -m venv venv
-    source venv/bin/activate
-    ```
-
-4. Install the project dependencies:
+3. Install the project dependencies:
 
     ```bash
     pip install -r requirements.txt
     ```
 
-5. Apply the database migrations:
+4. Apply the database migrations:
 
     ```bash
     python manage.py migrate
     ```
 
-6. (Optional) Create a superuser:
+5. Create a superuser:
 
     ```bash
     python manage.py createsuperuser
@@ -52,7 +85,24 @@ A brief description of your project, including its purpose and functionality.
 
 ## Running
 
-Start the Django development server:
+1. Add, remove and check Crontab
+
+   ```bash
+   python manage.py crontab add
+   python manage.py crontab remove
+   python manage.py crontab show
+   ```
+
+2. Import AWS pem files
+
+   In the project root folder, create a pem folder with necessary pem file inside, and update `client/settings.py` `SERVER_CONFIG` section.
+   
+3. Add server ip to the `client/settings.py` `ALLOWED_HOSTS` section.
+
+4. Create a `.env` file in the root folder, and record credentials inside.
+
+5. Start the Django development server:
 
 ```bash
-python manage.py runserver
+python manage.py runserver 0.0.0.0:8000
+```
