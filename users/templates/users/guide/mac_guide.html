@@ -1,6 +1,6 @@
 {% extends '../base.html' %}
 
-{% block title %} Mac配置 {% endblock %}
+{% block title %} Mac Configuration {% endblock %}
 
 {% load static %}
 {% block content %}
@@ -8,59 +8,59 @@
 	<!-- Install -->
 	<div class="card mt-4">
 		<div class="card-header">
-			<h3>下载</h3>
+			<h3>Download</h3>
 		</div>
 		<div class="card-body">
 			<h5 class="card-title">V2rayU</h5>
-			<p class="card-text">Mac桌面端推荐使用V2rayU:</p>
+			<p class="card-text">V2rayU is recommended for Mac desktop:</p>
 			<ul>
-				<li><p class="card-text">英特尔CPU请选择：<a href="https://github.com/yanue/V2rayU/releases/download/v4.2.2/V2rayU-64.dmg" target="_blank">hV2rayU-64.dmg</a></p></li>
-				<li><p class="card-text">苹果芯片系列请选择：<a href="https://github.com/yanue/V2rayU/releases/download/v4.2.2/V2rayU-arm64.dmg" target="_blank">V2rayU-arm64.dmg</a></p></li>
+				<li><p class="card-text">Intel CPU: <a href="https://github.com/yanue/V2rayU/releases/download/v4.2.2/V2rayU-64.dmg" target="_blank">hV2rayU-64.dmg</a></p></li>
+				<li><p class="card-text">Apple Silicon: <a href="https://github.com/yanue/V2rayU/releases/download/v4.2.2/V2rayU-arm64.dmg" target="_blank">V2rayU-arm64.dmg</a></p></li>
 			</ul>
-			<a href="https://sourceforge.net/projects/v2rayu.mirror/" target="_blank" class="btn btn-primary">V2RayU sourceforge 镜像</a>
+			<a href="https://sourceforge.net/projects/v2rayu.mirror/" target="_blank" class="btn btn-primary">V2RayU sourceforge Mirror</a>
 		</div>
 		<div class="card-body">
-			<h5 class="card-title">Shadowrocket（小火箭）</h5>
-			<p class="card-text">mac silicon系列已经支持iOS应用，在Apple Store下载后，可以使用iOS应用 Shadowrocket（小火箭）全局代理，进行链接。</p>
+			<h5 class="card-title">Shadowrocket</h5>
+			<p class="card-text">mThe Mac silicon series already supports iOS applications. After downloading them from the Apple Store, you can use the iOS application Shadowrocket (Little Rocket) global proxy to link.</p>
 		</div>
 
 		<div class="card-body">
-			<h5 class="card-title">V2BOX 下载</h5>
-			<p class="card-text">mac silicon系列已经支持iOS应用，在Apple Store下载后，可以使用iOS应用 V2BOX 全局代理，进行链接。</p>
+			<h5 class="card-title">V2BOX Download</h5>
+			<p class="card-text">The mac silicon series already supports iOS applications. After downloading from the Apple Store, you can use the iOS application V2BOX global proxy to link.</p>
 		</div>
 	</div>
 
 	<!-- Install -->
 	<div class="card mt-4">
 		<div class="card-header">
-			<h3>安装</h3>
+			<h3>Installation</h3>
 		</div>
 		<div class="card-body">
 			<div class="row">
 				<div class="col-sm-6">
 					<div class="card">
 						<div class="card-body">
-							<h5 class="card-title">步骤1</h5>
+							<h5 class="card-title">Step 1</h5>
 							<img src="{% static 'users/img/mac_config_1.jpeg' %}" class="card-img-top guide-image-width" alt="Mac Config Step 1">
-							<p class="card-text">在非App Store下载的应用会出触发隐私告警。</p>
+							<p class="card-text">Apps downloaded from non-App Stores will trigger a privacy warning.</p>
 						</div>
 					</div>
 				</div>
 				<div class="col-sm-6">
 					<div class="card">
 						<div class="card-body">
-							<h5 class="card-title">步骤2</h5>
+							<h5 class="card-title">Step 2</h5>
 							<img src="{% static 'users/img/mac_config_2.jpeg' %}" class="card-img-top guide-image-width" alt="Mac Config Step 2">
-							<p class="card-text">在设置 -> 隐私性与安全中，选择仍要打开。</p>
+							<p class="card-text">In Settings -> Privacy & Security, select "Turn on anyway".</p>
 						</div>
 					</div>
 				</div>
 				<div class="col-sm-6">
 					<div class="card">
 						<div class="card-body">
-							<h5 class="card-title">步骤3</h5>
+							<h5 class="card-title">Step 3</h5>
 							<img src="{% static 'users/img/mac_config_3.jpeg' %}" class="card-img-top guide-image-width" alt="Mac Config Step 3">
-							<p class="card-text">安装成功后开启V2rayU，Mac右上角显示灰色图标</p>
+							<p class="card-text">After successful installation, open V2rayU and a gray icon will appear in the upper right corner of the Mac</p>
 						</div>
 					</div>
 				</div>
@@ -71,42 +71,42 @@
 	<!-- Config -->
 	<div class="card mt-4">
 		<div class="card-header">
-			<h3>配置</h3>
+			<h3>Configuration</h3>
 		</div>
 		<div class="card-body">
 			<div class="row">
 				<div class="col-sm-6">
 					<div class="card">
 						<div class="card-body">
-							<h5 class="card-title">步骤1</h5>
+							<h5 class="card-title">Step 1</h5>
 							<img src="{% static 'users/img/mac_config_4.jpeg' %}" class="card-img-top guide-image-height" alt="Mac Config Step 4">
-							<p class="card-text">右键点击v2rayU图标，选择配置。</p>
+							<p class="card-text">Right-click the v2rayU icon and select Configure.</p>
 						</div>
 					</div>
 				</div>
 				<div class="col-sm-6">
 					<div class="card">
 						<div class="card-body">
-							<h5 class="card-title">步骤2</h5>
+							<h5 class="card-title">Step 2</h5>
 							<img src="{% static 'users/img/mac_config_5.jpeg' %}" class="card-img-top guide-image-height" alt="Mac Config Step 5">
-							<p class="card-text">链接方式（如图）</p>
+							<p class="card-text">Link method (as shown in the picture)</p>
 							<ol>
-								<li><p class="card-text">在配置界面，点击 ➕ 号</p></li>
-								<li><p class="card-text">在配置界面右上角导入链接</p></li>
-								<li><p class="card-text">复制链接到配置框</p></li>
-								<li><p class="card-text">点击导入，导入后下方会自动解析配置</p></li>
-								<li><p class="card-text">点击左侧OK保存</p></li>
+								<li><p class="card-text">On the configuration page, click ➕</p></li>
+								<li><p class="card-text">Import link in the upper right corner of the configuration interface</p></li>
+								<li><p class="card-text">Copy the link to the configuration box</p></li>
+								<li><p class="card-text">Click Import, and the configuration will be automatically parsed below after importing</p></li>
+								<li><p class="card-text">Click OK on the left to save</p></li>
 							</ol>
-							<p class="card-text">也可选择扫描屏幕中二维码的方式（左侧截图中，需开启系统权限）</p>
+							<p class="card-text">You can also choose to scan the QR code on the screen (in the screenshot on the left, system permissions need to be enabled)</p>
 						</div>
 					</div>
 				</div>
 				<div class="col-sm-6 mt-4">
 					<div class="card">
 						<div class="card-body">
-							<h5 class="card-title">步骤3</h5>
+							<h5 class="card-title">Step 3</h5>
 							<img src="{% static 'users/img/mac_config_6.jpeg' %}" class="card-img-top guide-image-height" alt="Mac Config Step 3">
-							<p class="card-text">选择全局代理，且服务开启（图标黑色），即表示服务开启</p>
+							<p class="card-text">Select Global Proxy and the service is turned on (the icon is black), which means the service is turned on</p>
 						</div>
 					</div>
 				</div>

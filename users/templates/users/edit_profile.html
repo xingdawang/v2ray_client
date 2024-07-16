@@ -5,14 +5,14 @@
 
 {% block content %}
 
-  <h2>修改 {{ user_name }} 的个人信息</h2>
+  <h2>Update Profile: {{ user_name }}</h2>
   <form method="post">
     {% csrf_token %}
     
     <!-- User information form fields -->
     <div class="form-floating mb-3">
       <input type="email" class="form-control {% if user_form.email.errors %}is-invalid{% endif %}" id="id_email" name="email" value="{{ user_form.email.value }}" placeholder="name@example.com">
-      <label for="id_email" class="form-label">邮箱</label>
+      <label for="id_email" class="form-label">Email</label>
       <div class="invalid-feedback">
         {% for error in user_form.email.errors %}
             {{ error }}
@@ -22,8 +22,8 @@
 
     <!-- Password change form field -->
     <div class="form-floating mb-3">
-        <input type="password" class="form-control {% if password_form.new_password1.errors %}is-invalid{% endif %}" id="id_password" name="new_password1" placeholder="输入新密码">
-        <label for="id_password1" class="form-label">更新密码</label>
+        <input type="password" class="form-control {% if password_form.new_password1.errors %}is-invalid{% endif %}" id="id_password" name="new_password1" placeholder="Update password">
+        <label for="id_password1" class="form-label">Update Password</label>
         <div class="invalid-feedback">
             {% for error in password_form.new_password1.errors %}
                 {{ error }}
@@ -31,6 +31,6 @@
         </div>
     </div>
 
-    <button type="submit" class="btn btn-primary">保存修改</button>
+    <button type="submit" class="btn btn-primary">Save Changes</button>
   </form>
 {% endblock %}

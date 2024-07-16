@@ -7,14 +7,14 @@
       <a class="navbar-brand" href="/">Link2Globe</a>
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/service">服务</a>
+          <a class="nav-link active" aria-current="page" href="/service">Service</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/price">价格</a>
+          <a class="nav-link active" aria-current="page" href="/price">Price</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            配置
+            Configuration
           </a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="/ios_guide">iOS</a></li>
@@ -26,21 +26,21 @@
         {% if user.is_authenticated %}
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            个人资料</a>
+            Profile</a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="/profile">个人资料</a></li>
-            <li><a class="dropdown-item" href="/edit_profile">修改信息</a></li>
+            <li><a class="dropdown-item" href="/profile">Profile</a></li>
+            <li><a class="dropdown-item" href="/edit_profile">Edit Profile</a></li>
             <li class="nav-item">
               <form method="POST" action="{% url 'users:logout' %}">
                 {% csrf_token %}
-                <button type="submit" class="dropdown-item">退出</button>
+                <button type="submit" class="dropdown-item">Log out</button>
               </form>
             </li>
           </ul>
         </li>
         {% else %}
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/login">用户登陆</a>
+          <a class="nav-link active" aria-current="page" href="/login">Log in</a>
         </li>
         {% endif %}
       </ul>

@@ -1,6 +1,6 @@
 {% extends '../base.html' %}
 
-{% block title %} 安卓配置 {% endblock %}
+{% block title %} Android Configuration {% endblock %}
 
 {% load static %}
 {% block content %}
@@ -8,65 +8,61 @@
 	<!-- Download -->
 	<div class="card mt-4">
 		<div class="card-header">
-			<h3>下载</h3>
+			<h3>Download</h3>
 		</div>
 		<div class="card-body">
-			<h5 class="card-title">V2rayNG官网下载</h5>
-			<p class="card-text">安卓或鸿蒙设备推荐使用V2RayNG，官网下载地址：<a href="https://www.linuxv2ray.com/client/android/" target="_blank">https://www.linuxv2ray.com/client/android/</a></p>
-			<a href="https://www.linuxv2ray.com/client/android/" target="_blank" class="btn btn-primary">跳转链接</a>
+			<h5 class="card-title">V2rayNG Official Website</h5>
+			<p class="card-text">For Android or HarmonyOS devices, V2RayNG is recommended. You can download it from the official website: <a href="https://www.linuxv2ray.com/client/android/" target="_blank">https://www.linuxv2ray.com/client/android/</a></p>
+			<a href="https://www.linuxv2ray.com/client/android/" target="_blank" class="btn btn-primary">Redirect Link</a>
 		</div>
 
 		<div class="card-body">
-			<h5 class="card-title">GitHub下载</h5>
-			<p class="card-text">GitHub下载地址：<a href="https://github.com/2dust/v2rayNG/releases" target="_blank">https://github.com/2dust/v2rayNG/releases</a> 新手使用建议下载稳定版本，即版本号后标记为 Latest 的版本。</p>
-			<a href="https://github.com/2dust/v2rayNG/releases" target="_blank" class="btn btn-primary">跳转链接</a>
+			<h5 class="card-title">Download from GitHub</h5>
+			<p class="card-text">GitHub Download Link: <a href="https://github.com/2dust/v2rayNG/releases" target="_blank">https://github.com/2dust/v2rayNG/releases </a>For beginners, it's advisable to download the stable version, typically indicated by the tag "Latest" following the version number.</p>
+			<a href="https://github.com/2dust/v2rayNG/releases" target="_blank" class="btn btn-primary">Redirect Link</a>
 		</div>
 		<div class="card-body">
-			<h5 class="card-title">谷歌应用商店下载</h5>
-			<p class="card-text">可以访问 Google Paly 即 Google 应用商店的朋友可以直接在商店搜索 v2rayNG 或打开应用商店地址：<a href="https://play.google.com/store/apps/details?id=com.v2ray.ang" target="_blank">https://play.google.com/store/apps/details?id=com.v2ray.ang</a> 直接下载并在线安装。</p>
-			<a href="https://play.google.com/store/apps/details?id=com.v2ray.ang" target="_blank" class="btn btn-primary">跳转链接</a>
+			<h5 class="card-title">Download from Google Play Store</h5>
+			<p class="card-text">You can visit Google Play, which is Google's app store, and search directly for v2rayNG. Alternatively, you can open the app store link: <a href="https://play.google.com/store/apps/details?id=com.v2ray.ang" target="_blank">https://play.google.com/store/apps/details?id=com.v2ray.ang</a> Directly download and install online.</p>
+			<a href="https://play.google.com/store/apps/details?id=com.v2ray.ang" target="_blank" class="btn btn-primary">Redirect Link</a>
 		</div>
 	</div>
 
 	<!-- Install -->
 	<div class="card mt-4">
 		<div class="card-header">
-			<h3>安装</h3>
+			<h3>Installation</h3>
 		</div>
 		<div class="card-body">
-			<p>应用程序的安装很简单，如果是通过应用商店下载的，那么直接根据提示下载并安装即可，如果是通过官网下载或其他第三方下载的，下载完后获得文为 v2rayNG_x.x.x.apk 文件，其中后缀 .apk 为安卓系统的安装包，x.x.x 代表版本号，然后点击安装即可。</p>
+			<p>Installing the application is straightforward. If you download it from the app store, simply follow the prompts to download and install. If you download it from the official website or other third-party sources, you'll receive a file named v2rayNG_x.x.x.apk, where .apk is the installation package for Android systems, and x.x.x represents the version number. After downloading, click on the file to install it.</p>
 		</div>
 	</div>
 
 	<!-- Config -->
 	<div class="card mt-4">
 		<div class="card-header">
-			<h3>配置</h3>
+			<h3>Configuration</h3>
 		</div>
 		<div class="card-body">
 			<div class="row">
 				<div class="col-sm-6">
 					<div class="card">
 						<div class="card-body">
-							<h5 class="card-title">步骤1</h5>
+							<h5 class="card-title">Step 1</h5>
 							<img src="{% static 'users/img/android_config_1.jpeg' %}" class="card-img-top guide-image-height" alt="Android Config Step 1">
-							<p class="card-text">准备添加节点服务器信息，点击软件主界面右上角的 ➕ 号按钮即可出现添加配置文件选项，如上图 V2rayNG 主界面所示，根据不同的节点添加不同的节点服务器配置文件。</p>
+							<p class="card-text">Prepare to add node server information. Click the ➕ button at the top right corner of the app’s main interface to bring up the option to add a configuration file. Refer to the V2rayNG main interface shown above, and add different node server configuration files according to different nodes.</p>
 						</div>
 					</div>
 				</div>
 				<div class="col-sm-6">
 					<div class="card">
 						<div class="card-body">
-							<h5 class="card-title">步骤2</h5>
+							<h5 class="card-title">Step 2</h5>
 							<img src="{% static 'users/img/android_config_2.jpeg' %}" class="card-img-top guide-image-height" alt="Android Config Step 2">
-							<p class="card-text">可以通过扫描二维码，或者从剪贴板导入服务器节点信息。</p>
-							<p class="card-text">节点服务器的连接地址，不同协议的地址如下所示，注意一定要复制全服务商提供的链接。</p>
+							<p class="card-text">You can import server node information either by scanning a QR code or by copying it from the clipboard.</p>
+							<p class="card-text">The connection addresses for different protocols of node servers are as follows. Be sure to copy the complete link provided by your service provider.</p>
 							<ul>
-								<li><p class="card-text">VMESS服务器即v2Ray节点地址：vmess://</p></li>
-								<li><p class="card-text">VLESS服务器即Xray节点地址：vless://</p></li>
-								<li><p class="card-text">Shadowsock服务器节点地址：ss://</p></li>
-								<li><p class="card-text">Trojan服务器节点地址：trojan://</p></li>
-								<li><p class="card-text">Shadowsock服务器节点地址：ss://</p></li>
+								<li><p class="card-text">VMESS server, namely v2Ray node address: vmess://</p></li>
 							</ul>
 						</div>
 					</div>
@@ -74,19 +70,19 @@
 				<div class="col-sm-6 mt-4">
 					<div class="card">
 						<div class="card-body">
-							<h5 class="card-title">步骤3</h5>
+							<h5 class="card-title">Step 3</h5>
 							<img src="{% static 'users/img/android_config_3.jpeg' %}" class="card-img-top guide-image-height" alt="Android Config Step 3">
-							<p class="card-text">导入服务器后，点击软件主界面右小角的 V </p>
-							<p class="card-text">字图标启动代理，首次配置会提示是否创建代理，即软件界面中的网络链接请求，点击确定启动，如下图所示。</p>
+							<p class="card-text">After importing the server, click on the "V" icon in the bottom right corner of the app's main interface.</p>
+							<p class="card-text">The letter "V" icon initiates the proxy. Upon initial configuration, you will be prompted to create a proxy. Click "OK" to start, as shown in the screenshot below.</p>
 						</div>
 					</div>
 				</div>
 				<div class="col-sm-6 mt-4">
 					<div class="card">
 						<div class="card-body">
-							<h5 class="card-title">步骤4</h5>
+							<h5 class="card-title">Step 4</h5>
 							<img src="{% static 'users/img/android_config_4.jpeg' %}" class="card-img-top guide-image-height" alt="Android Config Step 4">
-							<p class="card-text">启动成功后，主界面右下角的软件图标会变色代表启动成功，如下图所示。</p>
+							<p class="card-text">Once successfully started, the app icon in the bottom right corner of the main interface will change color to indicate successful startup, as shown in the screenshot below.</p>
 						</div>
 					</div>
 				</div>

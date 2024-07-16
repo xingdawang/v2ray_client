@@ -17,13 +17,13 @@ class UserRegisterForm(UserCreationForm):
         widgets = {
             'username': forms.TextInput(attrs={
                 'class': 'form-control',
-                'placeholder': '用户名'}),
+                'placeholder': 'Username'}),
             'password1': forms.PasswordInput(attrs={
                 'class': 'form-control',
-                'placeholder': '输入密码'}),
+                'placeholder': 'Enter Password'}),
             'password2': forms.PasswordInput(attrs={
                 'class': 'form-control',
-                'placeholder': '再次确认'}),
+                'placeholder': 'Confirm Password'}),
         }
 
 class CustomUserChangeForm(UserChangeForm):
@@ -34,7 +34,7 @@ class CustomUserChangeForm(UserChangeForm):
 
 class CustomPasswordChangeForm(forms.Form):
     new_password1 = forms.CharField(
-        label="新密码",
+        label="New Password",
         widget=forms.PasswordInput,
         required=False  # Make this field optional
     )
@@ -47,17 +47,17 @@ class CustomPasswordChangeForm(forms.Form):
         return user
 
 class PasswordResetRequestForm(forms.Form):
-    username = forms.CharField(max_length=150, label='用户名')
+    username = forms.CharField(max_length=150, label='Username')
 
 
 
 class PasswordResetForm(SetPasswordForm):
 
     new_password1 = forms.CharField(
-        label="新密码",
+        label="New Password",
         widget=forms.PasswordInput(attrs={'class': 'form-control'}),
     )
     new_password2 = forms.CharField(
-        label="确认新密码",
+        label="Confirm New Password",
         widget=forms.PasswordInput(attrs={'class': 'form-control'}),
     )

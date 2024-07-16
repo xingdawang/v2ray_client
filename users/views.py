@@ -21,8 +21,8 @@ def _send_new_user_notification(username, email, date_joined):
     User = get_user_model()
     staff_users = User.objects.filter(is_staff=True)
     
-    subject = f'新用户 {username} 已注册，请尽快分配配置'
-    message = f'新用户注册信息\n\n用户名: {username}\n邮箱: {email}\n注册时间: {formatted_date_joined}'
+    subject = f'A new user {username} has registered. Please allocate configurations promptly.'
+    message = f'New user registration information\n\nUsername: {username}\nEmail: {email}\nRegistration Time: {formatted_date_joined}'
     from_email = settings.EMAIL_HOST_USER
     recipient_list = [user.email for user in staff_users]
     
@@ -34,20 +34,20 @@ def _send_new_user_welcome_notification(username, email, date_joined):
     
     formatted_date_joined = date_joined.strftime('%Y-%m-%d %H:%M:%S')
 
-    subject = '欢迎注册我们的网站'
+    subject = 'Welcome to our website!'
     message = (
-        f'亲爱的 {username},\n\n'
-        f'感谢您注册我们的网站！我们很高兴您能加入我们的网络。\n'
-        f'您的注册信息如下：\n\n'
-        f'用户名: {username}\n'
-        f'邮箱: {email}\n'
-        f'注册时间: {formatted_date_joined}\n\n'
-        f'接下来请返回我们的网站，您需要完成设备的网络配置，您可以在"配置"中查看相关指引。\n'
-        f'您也可以在"个人资料"中查看已分配的配置链接。\n'
-        f'请悉知：首次注册后，需要等待我们的运营人员为您分配定制后配置信息。\n\n'
-        f'如果您有任何问题或需要帮助，请随时联系我们。\n\n'
-        f'祝好，\n'
-        f'我们的产品团队'
+        f'Dear {username},\n\n'
+        f'Thank you for registering on our website! We are delighted to have you join our network.\n'
+        f'Here are your registration details:\n\n'
+        f'Username: {username}\n'
+        f'Email: {email}\n'
+        f'Registration Time: {formatted_date_joined}\n\n'
+        f'Next, please return to our website to complete the device network configuration. You can find relevant instructions under "Configuration."\n'
+        f'You can also view the assigned configuration link under "Profile."\n'
+        f'Please note: After initial registration, please allow our operations team some time to assign customized configuration details.\n\n'
+        f'If you have any questions or need assistance, feel free to contact us.\n\n'
+        f'Best regards,\n'
+        f'Our Product Team'
     )
     from_email = settings.EMAIL_HOST_USER
     recipient_list = [email]
@@ -100,9 +100,9 @@ def login_view(request):
                 login(request, user)
                 return redirect('users:profile')
             else:
-                error_message = "账户或密码不正确"
+                error_message = "Username or Password is Incorrect."
         else:
-            error_message = "账户或密码不正确"
+            error_message = "Username or Password is Incorrect."
     else:
         form = AuthenticationForm()
 
@@ -116,7 +116,7 @@ def login_view(request):
 def logout_view(request):
     if request.method == 'POST':
         logout(request)
-        return redirect('users:login')  # 使用命名空间 'users'
+        return redirect('users:login')  # use name space 'users'
 
 def _format_flow(data_flow):
     if data_flow / 1024 < 1024:
@@ -239,7 +239,7 @@ def password_reset_request(request):
             try:
                 user = CustomUser.objects.get(username=username)
             except CustomUser.DoesNotExist:
-                return render(request, 'users/password_reset_request.html', {'form': form, 'error_message': '用户不存在'})
+                return render(request, 'users/password_reset_request.html', {'form': form, 'error_message': 'User not exists'})
 
             # 生成随机令牌
             token = get_random_string(length=32)
@@ -258,14 +258,14 @@ def password_reset_request(request):
             reset_url = f"{protocol}://{domain}/reset_password/{username}/{token}/"
 
             send_mail(
-                '重置密码',
-                f'请点击链接重置您的密码：{reset_url}',
+                'Password Reset',
+                f'Please click the link to reset your password: {reset_url}',
                 settings.EMAIL_HOST_USER,
                 [user.email],
                 fail_silently=False,
             )
 
-            return render(request, 'users/password_reset_request.html', {'form': form, 'success_message': '重置链接已发送到您的邮箱，请查收。'})
+            return render(request, 'users/password_reset_request.html', {'form': form, 'success_message': 'The reset link has been sent to your email. Please check your inbox.'})
 
     else:
         form = PasswordResetRequestForm()
