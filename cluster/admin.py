@@ -71,7 +71,10 @@ def convert_bytes(size_in_bytes):
         size = size_in_bytes
         unit = 'B'
 
-    return f"{size:.2f} {unit}"
+    if size == 0:
+        return f'-'
+    else:
+        return f"{size:.2f} {unit}"
 
 class ProtocalConfigAdmin(admin.ModelAdmin):
     list_display = ('remark', 'port', 'server_ip', 'expiry_time_formatted')

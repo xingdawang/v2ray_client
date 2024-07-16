@@ -124,15 +124,30 @@ def logout_view(request):
         logout(request)
         return redirect('users:login')  # use name space 'users'
 
-def _format_flow(data_flow):
-    if data_flow / 1024 < 1024:
-        return f'{data_flow / 1024:.2f} Kb'
-    elif data_flow / 1024 / 1024 < 1024:
-        return f'{data_flow / 1024 / 1024:.2f} Mb'
-    elif data_flow / 1024 / 1024 / 1024 < 1024:
-        return f'{data_flow / 1024 / 1024 / 1024:.2f} Gb'
+def _convert_bytes(size_in_bytes):
+    # Constants for conversion
+    KB = 1024
+    MB = KB * 1024
+    GB = MB * 1024
+
+    # Determine the unit and format the output
+    if size_in_bytes >= GB:
+        size = size_in_bytes / GB
+        unit = 'GB'
+    elif size_in_bytes >= MB:
+        size = size_in_bytes / MB
+        unit = 'MB'
+    elif size_in_bytes >= KB:
+        size = size_in_bytes / KB
+        unit = 'KB'
     else:
-        return data_flow
+        size = size_in_bytes
+        unit = 'B'
+
+    if size == 0:
+        return f'-'
+    else:
+        return f"{size:.2f} {unit}"
 
 def _format_timestamp(data_flow):
     if data_flow == 0:
@@ -182,9 +197,9 @@ def profile(request):
                 'joined_date': user.date_joined,
                 'email': user.email,
                 'status_set': True,
-                'up': _format_flow(protocol_config.up),
-                'down': _format_flow(protocol_config.down),
-                'total': _format_flow(protocol_config.total),
+                'up': _convert_bytes(protocol_config.up),
+                'down': _convert_bytes(protocol_config.down),
+                'total': _convert_bytes(protocol_config.total),
                 'expiry_time': _format_timestamp(protocol_config.expiry_time),
                 'config_url': protocol_config.config_url,
                 'qr_src': _get_qr_src(protocol_config.config_url),
