@@ -37,7 +37,7 @@ def _send_new_user_welcome_notification(username, email, date_joined):
     subject = 'Welcome to Join Us!'
     message = (
         f'Dear {username},\n\n'
-        f'Thank you for registering on our website! We are delighted to have you join our network.\n'
+        f'Thank you for registering on our service! We are delighted to have you join our network.\n'
         f'Here are your registration details:\n\n'
         f'Username: {username}\n'
         f'Email: {email}\n'
