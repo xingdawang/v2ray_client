@@ -7,7 +7,7 @@ from django.conf import settings
 from django.utils.crypto import get_random_string
 from django.utils import timezone
 from datetime import datetime, timedelta
-import base64, qrcode
+import base64, qrcode, pytz
 from io import BytesIO
 
 from users.models import CustomUser
@@ -22,7 +22,7 @@ def _send_new_user_notification(username, email, date_joined):
     staff_users = User.objects.filter(is_staff=True)
     
     subject = f'A new user {username} has registered. Please allocate configurations promptly.'
-    message = f'New user registration information\n\nUsername: {username}\nEmail: {email}\nRegistration Time: {formatted_date_joined}'
+    message = f'New user registration information\n\nUsername: {username}\nEmail: {email}\nRegistration Time: {formatted_date_joined} (China Standard Time, CST)'
     from_email = settings.EMAIL_HOST_USER
     recipient_list = [user.email for user in staff_users]
     
@@ -34,14 +34,14 @@ def _send_new_user_welcome_notification(username, email, date_joined):
     
     formatted_date_joined = date_joined.strftime('%Y-%m-%d %H:%M:%S')
 
-    subject = 'Welcome to our website!'
+    subject = 'Welcome to Join Us!'
     message = (
         f'Dear {username},\n\n'
         f'Thank you for registering on our website! We are delighted to have you join our network.\n'
         f'Here are your registration details:\n\n'
         f'Username: {username}\n'
         f'Email: {email}\n'
-        f'Registration Time: {formatted_date_joined}\n\n'
+        f'Registration Time: {formatted_date_joined} (China Standard Time, CST)\n\n'
         f'Next, please return to our website to complete the device network configuration. You can find relevant instructions under "Configuration."\n'
         f'You can also view the assigned configuration link under "Profile."\n'
         f'Please note: After initial registration, please allow our operations team some time to assign customized configuration details.\n\n'
@@ -75,8 +75,14 @@ def register(request):
                 # notify the staff with email and date joined
                 email = form.cleaned_data.get('email')
                 date_joined = user.date_joined
-                _send_new_user_notification(username, email, date_joined)
-                _send_new_user_welcome_notification(username, email, date_joined)
+
+                # convert user time to China timezone
+                user_timezone = pytz.timezone('Asia/Shanghai')
+                # use pytz to convert time
+                local_time = date_joined.astimezone(user_timezone)
+
+                _send_new_user_notification(username, email, local_time)
+                _send_new_user_welcome_notification(username, email, local_time)
                 return redirect('users:profile')
     else:
         form = UserRegisterForm()
