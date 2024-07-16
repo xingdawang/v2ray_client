@@ -51,6 +51,28 @@ export_to_excel.short_description = "Export excel"
 class DbServerAdmin(admin.ModelAdmin):
     list_display = ('server_name', 'server_ip')
 
+def convert_bytes(size_in_bytes):
+    # Constants for conversion
+    KB = 1024
+    MB = KB * 1024
+    GB = MB * 1024
+
+    # Determine the unit and format the output
+    if size_in_bytes >= GB:
+        size = size_in_bytes / GB
+        unit = 'GB'
+    elif size_in_bytes >= MB:
+        size = size_in_bytes / MB
+        unit = 'MB'
+    elif size_in_bytes >= KB:
+        size = size_in_bytes / KB
+        unit = 'KB'
+    else:
+        size = size_in_bytes
+        unit = 'B'
+
+    return f"{size:.2f} {unit}"
+
 class ProtocalConfigAdmin(admin.ModelAdmin):
     list_display = ('remark', 'port', 'server_ip', 'expiry_time_formatted')
 
@@ -70,6 +92,35 @@ class ProtocalConfigAdmin(admin.ModelAdmin):
     # Add the custom action
     actions = [export_to_excel]
 
+
+
+    def up_formatted(self, obj):
+        return convert_bytes(obj.up)
+    up_formatted.short_description = 'Up'
+
+    def down_formatted(self, obj):
+        return convert_bytes(obj.down)
+    down_formatted.short_description = 'Down'
+
+    def total_formatted(self, obj):
+        return convert_bytes(obj.total)
+    total_formatted.short_description = 'Total'
+
+    readonly_fields = ('up_formatted', 'down_formatted', 'total_formatted', 'up', 'down', 'total', 'port',
+         'enable', 'expiry_time', 'alter_id', 'network', 'network_type', 'protocal')
+
+    # Include the formatted fields in the fieldsets for the detail view
+    fieldsets = (
+        ('Config', {
+            'fields': ('remark', 'server_ip', 'port', 'uuid', 'config_url')
+        }),
+        ('Data Usage', {
+            'fields': ('up_formatted', 'down_formatted', 'total_formatted')
+        }),
+        ('Network', {
+            'fields': ('expiry_time', 'alter_id', 'network', 'network_type', 'protocal')
+        }),
+    )
 
 admin.site.register(DbServer, DbServerAdmin)
 admin.site.register(ProtocalConfig, ProtocalConfigAdmin)
