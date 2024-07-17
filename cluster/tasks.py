@@ -160,7 +160,7 @@ def save_config():
         # settings
         settings = json.loads(row['settings'])
         uuid = settings['clients'][0]['id']
-        alter_id = settings['clients'][0]['alterId']
+        alter_id = settings['clients'][0].get('alterId', 0)
 
         # stream_settings
         stream_settings = json.loads(row['stream_settings'])
