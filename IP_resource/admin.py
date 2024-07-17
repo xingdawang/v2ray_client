@@ -5,6 +5,7 @@ from django.http import HttpResponse
 from django.core.serializers.json import DjangoJSONEncoder
 import json
 from .models import IPResource
+from django.utils.translation import gettext_lazy as _
 
 class IPResourceAdmin(admin.ModelAdmin):
     list_display = ('ip_address', 'port', 'username', 'expire_date', 'host_server', 'protocol_config')
@@ -72,7 +73,7 @@ class IPResourceAdmin(admin.ModelAdmin):
 
         return response
 
-    export_to_json.short_description = "Show X-UI config template"
+    export_to_json.short_description = _("Show X-UI config template")
 
     # Add admin action to actions list
     actions = ['export_to_json']

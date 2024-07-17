@@ -1,0 +1,163 @@
+# locale/zh_Hans/LC_MESSAGES/django.po
+msgid ""
+msgstr ""
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-07-17 22:34+0100\n"
+"Language: zh_Hans\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+
+#: IP_resource/admin.py:76
+msgid "Show X-UI config template"
+msgstr "生成 xray 配置模版"
+
+#: IP_resource/apps.py:7
+msgid "External Resource"
+msgstr "外部源"
+
+#: IP_resource/models.py:7
+msgid "IP Address"
+msgstr "IP 地址"
+
+#: IP_resource/models.py:8 cluster/models.py:25
+msgid "Port"
+msgstr "端口"
+
+#: IP_resource/models.py:9
+msgid "Username"
+msgstr "用户名"
+
+#: IP_resource/models.py:10
+msgid "Password"
+msgstr "密码"
+
+#: IP_resource/models.py:11
+msgid "Expire Date"
+msgstr "过期时间"
+
+#: IP_resource/models.py:12
+msgid "Host Server"
+msgstr "节点服务器"
+
+#: IP_resource/models.py:13 cluster/models.py:34 users/models.py:9
+msgid "Protocal Config"
+msgstr "配置协议"
+
+#: IP_resource/models.py:14
+msgid "Note"
+msgstr "备注"
+
+#: IP_resource/models.py:17
+msgid "IP Resource"
+msgstr "外部IP"
+
+#: IP_resource/models.py:18
+msgid "IP Resources"
+msgstr "外部IP"
+
+#: cluster/admin.py:48
+msgid "Export Excel"
+msgstr "导出到 Excel"
+
+#: cluster/admin.py:91 cluster/models.py:24
+msgid "Expiry Time"
+msgstr "过期时间"
+
+#: cluster/admin.py:103 cluster/models.py:20
+msgid "Up"
+msgstr "上行流量"
+
+#: cluster/admin.py:107 cluster/models.py:21
+msgid "Down"
+msgstr "下行流量"
+
+#: cluster/admin.py:111 cluster/models.py:22
+msgid "Total"
+msgstr "总流量"
+
+#: cluster/admin.py:114
+msgid "Yes"
+msgstr "是"
+
+#: cluster/admin.py:114
+msgid "No"
+msgstr "否"
+
+#: cluster/admin.py:115
+msgid "Network_Enable"
+msgstr "网络已启用"
+
+#: cluster/admin.py:122
+msgid "Config"
+msgstr "配置"
+
+#: cluster/admin.py:125
+msgid "Data Usage"
+msgstr "数据统计"
+
+#: cluster/admin.py:128 cluster/models.py:28
+msgid "Network"
+msgstr "网络"
+
+#: cluster/apps.py:8
+msgid "Cluster"
+msgstr "内部集群"
+
+#: cluster/models.py:6
+msgid "Server Name"
+msgstr "服务器名称"
+
+#: cluster/models.py:7 cluster/models.py:19
+msgid "Server IP"
+msgstr "服务器 IP"
+
+#: cluster/models.py:10
+msgid "Db Server"
+msgstr "节点服务器"
+
+#: cluster/models.py:11
+msgid "Db Servers"
+msgstr "节点服务器"
+
+#: cluster/models.py:18
+msgid "Remark"
+msgstr "配置名称"
+
+#: cluster/models.py:23
+msgid "Enable"
+msgstr "是否启用"
+
+#: cluster/models.py:26
+msgid "UUID"
+msgstr "UUID"
+
+#: cluster/models.py:27
+msgid "Alter ID"
+msgstr "Alter ID"
+
+#: cluster/models.py:29
+msgid "Network Type"
+msgstr "网络类型"
+
+#: cluster/models.py:30
+msgid "Protocol"
+msgstr "协议"
+
+#: cluster/models.py:31 users/admin.py:20
+msgid "Config URL"
+msgstr "配置链接"
+
+#: cluster/models.py:35
+msgid "Protocal Configs"
+msgstr "配置协议"
+
+#: users/apps.py:8
+msgid "User"
+msgstr "客户"
+
+#: users/models.py:15
+msgid "Custom User"
+msgstr "客户"
+
+#: users/models.py:16
+msgid "Custom Users"
+msgstr "客户"

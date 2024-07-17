@@ -198,3 +198,17 @@ V2ray Web Client with admin backend to distribute ISP and x-ui configurations.
     ```bash
     nohup python manage.py runserver 0.0.0.0:8000 &
     ```
+
+6. Internalization
+
+    This command will scan the entire project source code, looking for all strings marked as translatable.
+
+    ```bash
+    django-admin makemessages -l zh_Hans
+    ```
+
+    This command will compile all PO files and generate corresponding MO files (.mo files are the binary form of PO files, Django uses these files to display translated strings at runtime).
+
+    ```bash
+    django-admin compilemessages
+    ```

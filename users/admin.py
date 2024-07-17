@@ -2,6 +2,8 @@ from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 from .models import CustomUser
 from cluster.models import ProtocalConfig
+from django.utils.translation import gettext_lazy as _
+
 
 class CustomUserAdmin(UserAdmin):
 
@@ -15,7 +17,7 @@ class CustomUserAdmin(UserAdmin):
     original_fieldsets = UserAdmin.fieldsets
 
     # Include additional fields in the user detail view
-    config_url_fieldsets = ('Config URL', {'fields': ('protocol_config',)})
+    config_url_fieldsets = (_('Config URL'), {'fields': ('protocol_config',)})
 
     # Insert the new fieldset in the second position
     fieldsets = (

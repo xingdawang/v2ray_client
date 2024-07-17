@@ -4,6 +4,7 @@ from datetime import datetime
 from django.http import HttpResponse
 import openpyxl
 from openpyxl.writer.excel import save_virtual_workbook
+from django.utils.translation import gettext_lazy as _
 
 
 def export_to_excel(modeladmin, request, queryset):
@@ -44,7 +45,7 @@ def export_to_excel(modeladmin, request, queryset):
     response['Content-Disposition'] = f'attachment; filename={filename}'
     return response
 
-export_to_excel.short_description = "Export excel"
+export_to_excel.short_description = _("Export Excel")
 
 
 
@@ -87,7 +88,7 @@ class ProtocalConfigAdmin(admin.ModelAdmin):
         else:
             return ''
 
-    expiry_time_formatted.short_description = 'Expiry Time'  # set column name
+    expiry_time_formatted.short_description = _('Expiry Time')  # set column name
 
     # Customize the filter
     list_filter = ('server_ip',)
@@ -99,29 +100,33 @@ class ProtocalConfigAdmin(admin.ModelAdmin):
 
     def up_formatted(self, obj):
         return convert_bytes(obj.up)
-    up_formatted.short_description = 'Up'
+    up_formatted.short_description = _('Up')
 
     def down_formatted(self, obj):
         return convert_bytes(obj.down)
-    down_formatted.short_description = 'Down'
+    down_formatted.short_description = _('Down')
 
     def total_formatted(self, obj):
         return convert_bytes(obj.total)
-    total_formatted.short_description = 'Total'
+    total_formatted.short_description = _('Total')
+
+    def network_enable(self, obj):
+        return _('Yes') if obj.enable else _('No')
+    network_enable.short_description = _('Network_Enable')
 
     readonly_fields = ('up_formatted', 'down_formatted', 'total_formatted', 'up', 'down', 'total', 'port',
-         'enable', 'expiry_time', 'alter_id', 'network', 'network_type', 'protocal')
+         'enable', 'network_enable', 'expiry_time', 'alter_id', 'network', 'network_type', 'protocal')
 
     # Include the formatted fields in the fieldsets for the detail view
     fieldsets = (
-        ('Config', {
+        (_('Config'), {
             'fields': ('remark', 'server_ip', 'port', 'uuid', 'config_url')
         }),
-        ('Data Usage', {
+        (_('Data Usage'), {
             'fields': ('up_formatted', 'down_formatted', 'total_formatted')
         }),
-        ('Network', {
-            'fields': ('expiry_time', 'alter_id', 'network', 'network_type', 'protocal')
+        (_('Network'), {
+            'fields': ('expiry_time', 'alter_id', 'network', 'network_type', 'protocal', 'network_enable')
         }),
     )
 
