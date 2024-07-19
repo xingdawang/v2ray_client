@@ -7,7 +7,8 @@ from .models import CustomUser
 
 @receiver(post_save, sender=CustomUser)
 def send_protocol_config_update_email(sender, instance, **kwargs):
-    if instance.protocol_config:
+    # Only when protocol_config column changes, then send email.
+    if instance._original_protocol_config != instance.protocol_config:
         # print(instance.protocol_config)
 
         subject = 'Configuration Updated'

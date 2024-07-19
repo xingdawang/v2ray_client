@@ -17,6 +17,11 @@ class CustomUser(AbstractUser):
         verbose_name = _('Custom User')
         verbose_name_plural = _('Custom Users')
 
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        # Save original protocol_config value
+        self._original_protocol_config = self.protocol_config
+
     def generate_reset_token(self):
         token = get_random_string(length=32)
         self.reset_token = token
