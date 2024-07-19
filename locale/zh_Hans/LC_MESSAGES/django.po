@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-17 22:34+0100\n"
+"POT-Creation-Date: 2024-07-19 11:37+0100\n"
 "Language: zh_Hans\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 
@@ -18,7 +18,7 @@ msgstr "外部源"
 msgid "IP Address"
 msgstr "IP 地址"
 
-#: IP_resource/models.py:8 cluster/models.py:25
+#: IP_resource/models.py:8 cluster/models.py:26
 msgid "Port"
 msgstr "端口"
 
@@ -38,7 +38,7 @@ msgstr "过期时间"
 msgid "Host Server"
 msgstr "节点服务器"
 
-#: IP_resource/models.py:13 cluster/models.py:34 users/models.py:9
+#: IP_resource/models.py:13 cluster/models.py:35 users/models.py:9
 msgid "Protocal Config"
 msgstr "配置协议"
 
@@ -58,19 +58,19 @@ msgstr "外部IP"
 msgid "Export Excel"
 msgstr "导出到 Excel"
 
-#: cluster/admin.py:91 cluster/models.py:24
+#: cluster/admin.py:91 cluster/models.py:25
 msgid "Expiry Time"
 msgstr "过期时间"
 
-#: cluster/admin.py:103 cluster/models.py:20
+#: cluster/admin.py:103 cluster/models.py:21
 msgid "Up"
 msgstr "上行流量"
 
-#: cluster/admin.py:107 cluster/models.py:21
+#: cluster/admin.py:107 cluster/models.py:22
 msgid "Down"
 msgstr "下行流量"
 
-#: cluster/admin.py:111 cluster/models.py:22
+#: cluster/admin.py:111 cluster/models.py:23
 msgid "Total"
 msgstr "总流量"
 
@@ -94,7 +94,7 @@ msgstr "配置"
 msgid "Data Usage"
 msgstr "数据统计"
 
-#: cluster/admin.py:128 cluster/models.py:28
+#: cluster/admin.py:128 cluster/models.py:29
 msgid "Network"
 msgstr "网络"
 
@@ -106,47 +106,51 @@ msgstr "内部集群"
 msgid "Server Name"
 msgstr "服务器名称"
 
-#: cluster/models.py:7 cluster/models.py:19
+#: cluster/models.py:7 cluster/models.py:20
 msgid "Server IP"
 msgstr "服务器 IP"
 
-#: cluster/models.py:10
+#: cluster/models.py:8
+msgid "pem name"
+msgstr "pem 密钥"
+
+#: cluster/models.py:11
 msgid "Db Server"
 msgstr "节点服务器"
 
-#: cluster/models.py:11
+#: cluster/models.py:12
 msgid "Db Servers"
 msgstr "节点服务器"
 
-#: cluster/models.py:18
+#: cluster/models.py:19
 msgid "Remark"
 msgstr "配置名称"
 
-#: cluster/models.py:23
+#: cluster/models.py:24
 msgid "Enable"
 msgstr "是否启用"
 
-#: cluster/models.py:26
+#: cluster/models.py:27
 msgid "UUID"
 msgstr "UUID"
 
-#: cluster/models.py:27
+#: cluster/models.py:28
 msgid "Alter ID"
 msgstr "Alter ID"
 
-#: cluster/models.py:29
+#: cluster/models.py:30
 msgid "Network Type"
 msgstr "网络类型"
 
-#: cluster/models.py:30
+#: cluster/models.py:31
 msgid "Protocol"
 msgstr "协议"
 
-#: cluster/models.py:31 users/admin.py:20
+#: cluster/models.py:32 users/admin.py:20
 msgid "Config URL"
 msgstr "配置链接"
 
-#: cluster/models.py:35
+#: cluster/models.py:36
 msgid "Protocal Configs"
 msgstr "配置协议"
 

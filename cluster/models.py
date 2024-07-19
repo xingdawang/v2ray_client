@@ -5,6 +5,7 @@ from django.utils.translation import gettext_lazy as _
 class DbServer(models.Model):
     server_name = models.CharField(_('Server Name'), max_length=100)
     server_ip = models.CharField(_('Server IP'), max_length=100)
+    pem_name = models.CharField(_('pem name'), max_length=100)
 
     class Meta:
         verbose_name = _('Db Server')

@@ -7,7 +7,7 @@ load_dotenv()
 
 SERVER_CONFIG = {
     'USER': os.getenv('SERVER_CONFIG_USER'),
-    'PEM_FILE_PATH': os.path.join(os.path.dirname(__file__), '..', 'pem', 'v2ray-oregon.pem'),
+    'PEM_FOLDER_PATH': os.path.join(os.path.dirname(__file__), '..', 'pem'),
 }
 
 AUTH_USER_MODEL = 'users.CustomUser'

@@ -36,7 +36,7 @@ def request_remote_db():
     delete_db_files_in_directory(local_path)
 
     # define aws pem file location, e.g. client/users/../pem/v2ray-california.pem
-    pem_file_path = settings.SERVER_CONFIG['PEM_FILE_PATH']
+    pem_folder_path = settings.SERVER_CONFIG['PEM_FOLDER_PATH']
     # logger.debug(f'pem_file_path: {pem_file_path}')
 
     # iterrate all servers
@@ -49,6 +49,8 @@ def request_remote_db():
         # define download location
         local_file_name = server_ip_address.replace('.', '_')+'.db'
         local_path = os.path.join(os.path.dirname(__file__), 'static', 'db', local_file_name)
+        pem_file_name = server.pem_name
+        pem_file_path = os.path.join(pem_folder_path, pem_file_name)
     
         try:
             # Using Fabric to connect to the server
