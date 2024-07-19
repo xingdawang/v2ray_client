@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-19 11:37+0100\n"
+"POT-Creation-Date: 2024-07-19 17:11+0100\n"
 "Language: zh_Hans\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 
@@ -42,7 +42,7 @@ msgstr "节点服务器"
 msgid "Protocal Config"
 msgstr "配置协议"
 
-#: IP_resource/models.py:14
+#: IP_resource/models.py:14 users/models.py:11
 msgid "Note"
 msgstr "备注"
 
@@ -154,14 +154,30 @@ msgstr "配置链接"
 msgid "Protocal Configs"
 msgstr "配置协议"
 
+#: users/admin.py:18
+msgid "Customer Profile"
+msgstr "客户信息"
+
+#: users/admin.py:22
+msgid "Permissions"
+msgstr ""
+
+#: users/admin.py:24
+msgid "Important dates"
+msgstr ""
+
 #: users/apps.py:8
 msgid "User"
 msgstr "客户"
 
-#: users/models.py:15
+#: users/models.py:10
+msgid "Customer Group"
+msgstr "客户组"
+
+#: users/models.py:17
 msgid "Custom User"
 msgstr "客户"
 
-#: users/models.py:16
+#: users/models.py:18
 msgid "Custom Users"
 msgstr "客户"

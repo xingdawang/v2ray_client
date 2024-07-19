@@ -7,6 +7,8 @@ from django.utils.translation import gettext_lazy as _
 class CustomUser(AbstractUser):
     
     protocol_config = models.ForeignKey('cluster.ProtocalConfig', on_delete=models.SET_NULL, null=True, blank=True, related_name='users', verbose_name=_('Protocal Config'))
+    customer_group = models.CharField(max_length=100, null=True, blank=True, verbose_name=_('Customer Group'))
+    note = models.TextField(_('Note'), null=True, blank=True)
 
     reset_token = models.CharField(max_length=32, null=True, blank=True)
     reset_token_expiry = models.DateTimeField(null=True, blank=True)
