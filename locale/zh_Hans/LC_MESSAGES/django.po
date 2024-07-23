@@ -2,17 +2,21 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-19 17:11+0100\n"
+"POT-Creation-Date: 2024-07-23 15:35+0100\n"
 "Language: zh_Hans\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 
-#: IP_resource/admin.py:76
+#: IP_resource/admin.py:79
 msgid "Show X-UI config template"
 msgstr "生成 xray 配置模版"
 
 #: IP_resource/apps.py:7
 msgid "External Resource"
 msgstr "外部源"
+
+#: IP_resource/forms.py:17
+msgid "Select an option or leave blank..."
+msgstr "选择配置或留空"
 
 #: IP_resource/models.py:7
 msgid "IP Address"

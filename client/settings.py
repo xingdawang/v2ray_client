@@ -33,6 +33,8 @@ CRONJOBS = [
 # Application definition
 
 INSTALLED_APPS = [
+    'dal',
+    'dal_select2',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -140,9 +142,9 @@ LOCALE_PATHS = [
 
 # Static files (CSS, JavaScript, Images)
 STATIC_URL = '/static/'
-STATIC_ROOT = BASE_DIR / 'staticfiles'
+# STATIC_ROOT = BASE_DIR / 'staticfiles'
 # use this static folder for img, js and css, be careful chmod 777 for folder static
-# STATIC_ROOT = '/var/www/link2globe.com/static'
+STATIC_ROOT = '/var/www/link2globe.com/static'
 
 # Compressor settings
 COMPRESS_ROOT = STATIC_ROOT

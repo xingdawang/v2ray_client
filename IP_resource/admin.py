@@ -5,9 +5,12 @@ from django.http import HttpResponse
 from django.core.serializers.json import DjangoJSONEncoder
 import json
 from .models import IPResource
+from .forms import IPResourceForm
 from django.utils.translation import gettext_lazy as _
 
 class IPResourceAdmin(admin.ModelAdmin):
+    form = IPResourceForm
+
     list_display = ('ip_address', 'port', 'username', 'expire_date', 'host_server', 'protocol_config')
 
     # Customize the filter
