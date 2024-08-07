@@ -43,3 +43,19 @@ html, body {
     color: blue;
     margin-top: 10px;
 }
+
+.price-highlight {
+    color: green;
+    font-size: 100px;
+    font-weight: bold;
+}
+
+.paragraph-divider {
+  border-bottom: 2px solid green; /* Adjust color and thickness as needed */
+  padding-bottom: 1rem; /* Adjust spacing as needed */
+  margin-bottom: 1rem; /* Adjust spacing as needed */
+}
+
+.price-card {
+    margin-top: 30px;
+}
