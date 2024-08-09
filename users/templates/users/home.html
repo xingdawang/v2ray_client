@@ -1,7 +1,113 @@
 {% extends "./base.html" %}
 
+{% load static %}
 {% block title %} Home {% endblock %}
 
 {% block content %}
-placeholder for homepage
+
+<div class="mt-4">
+	<div class="row mt-4">
+		<div class="col">
+			<h2>Fast and Secure VPN</h2>
+			<p>Fast and leading VPN service</p>
+			<br>
+			<p><i class="bi bi-check2"></i>Anonymous browsing.</p>
+			<p><i class="bi bi-check2"></i>No matter where you are, you can surf the Internet just like at home.</p>
+			<p><i class="bi bi-check2"></i>VPN servers in 100+ cities in 40+ countries.</p>
+			<p><i class="bi bi-check2"></i>Trusted by millions of people around the world.</p>
+		</div>
+		<div class="col">
+			<img src="{% static 'users/img/home_fast_secure_vpn.jpg' %}" class="card-img-top" alt="highly customizable">
+		</div>
+	</div>
+
+	<div class="row">
+		<h2>Why use Link2Globe VPN?</h2>
+		<div class="col">
+			<img src="{% static 'users/img/home_anonymous_browsing.jpg' %}" class="card-img-top vpn-description-image" alt="highly customizable">
+			<h3 class="text-center text-primary">Anonymous Browsing</h3>
+			<p class="text-center">Hide your online identity and surf the web anonymously. Your real IP address is kept strictly confidential, so you will never be tracked.</p>
+		</div>
+		<div class="col">
+			<img src="{% static 'users/img/home_browse_web_safely.jpg' %}" class="card-img-top vpn-description-image" alt="highly customizable">
+			<h3 class="text-center text-primary">Browse the Web Safely</h3>
+			<p class="text-center">Your internet traffic is protected by SSL encryption, safe from any hackers and spies.</p>
+		</div>
+		<div class="col">
+			<img src="{% static 'users/img/home_power_server.jpg' %}" class="card-img-top vpn-description-image" alt="highly customizable">
+			<h3 class="text-center text-primary">Powerful Server Network</h3>
+			<p class="text-center">Link2Globe has a large and powerful dedicated server network around the world, with smooth and fast network connections.</p>
+		</div>
+		<div class="col">
+			<img src="{% static 'users/img/home_exclusive_home_ip.jpg' %}" class="card-img-top vpn-description-image" alt="highly customizable">
+			<h3 class="text-center text-primary">Exclusive Family IP</h3>
+			<p class="text-center">Each VPN of Link2Globe has its own pure home IP, and each IP is strictly screened to ensure that your social/e-commerce and other business accounts will not be blocked due to IP.</p>
+		</div>
+	</div>
+
+	<div class="row mt-4">
+		<h2>Why Link2Globe Is the Best Choice?</h2>
+		<div class="row">
+			<div class="col">
+				<p class="describe-icon text-center"><i class="bi bi-house"></i></p>
+				<p class="text-center text-primary">Pure Home IP</p>
+			</div>
+			<div class="col">
+				<p class="describe-icon text-center"><i class="bi bi-infinity"></i></p>
+				<p class="text-center text-primary">Unlimited bandwidth</p>
+			</div>
+			<div class="col">
+				<p class="describe-icon text-center"><i class="bi bi-hdd-network"></i></p>
+				<p class="text-center text-primary">Unlimited Server Switches</p>
+			</div>
+			<div class="col">
+				<p class="describe-icon text-center"><i class="bi bi-speedometer2"></i></p>
+				<p class="text-center text-primary">Unlimited Speed</p>
+			</div>
+			<div class="col">
+				<p class="describe-icon text-center"><i class="bi bi-info-circle"></i></p>
+				<p class="text-center text-primary">24/7 Support</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col">
+				<p class="describe-icon text-center"><i class="bi bi-journal-x"></i></p>
+				<p class="text-center text-primary">Do Not Save Logs</p>
+			</div>
+			<div class="col">
+				<p class="describe-icon text-center"><i class="bi bi-credit-card"></i></p>
+				<p class="text-center text-primary">Convenient Payment (Visa, Alipay, etc.)</p>
+			</div>
+			<div class="col">
+				<p class="describe-icon text-center"><i class="bi bi-globe"></i></p>
+				<p class="text-center text-primary">Servers in 40+ Countries</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="row mt-4">
+		<h2>Link2globe VPN Is Very Safe!</h2>
+		<div class="row">
+			<div class="col">
+				<img src="{% static 'users/img/home_shield.jpg' %}" class="home-safe-image" alt="Link2globe VPN Is Very Safe">
+			</div>
+			<div class="col">
+				<p>Most VPN providers on the market offer cheap and low-performance virtual private servers (VPS), using shared or impure IPs, threatening your business security and possibly causing your account to be blocked. Link2Globe has a professional security and anti-abuse team to ensure the security and purity of IP and network communications, and has a powerful dedicated server cluster around the world to ensure a fast and stable network.</p>
+			</div>
+			<div class="col">
+				<p>We cover the whole world</p>
+				<p>VPN servers in 100+ cities in 40+ countries</p>
+				<p>Link2Globe utilizes a super powerful network of dedicated VPN servers. Many VPN providers use cheap VPS that can only handle a few customers, they are often overloaded and very slow. Our servers are physical, connected to high-quality network nodes, usually on 1Gbit or 10Gbit lines. We always keep speed first - maximize your Internet connection with Link2Globe VPN.</p>
+				<p>Our VPN servers have been deployed in 40+ countries (regions), with IP addresses covering 100+ countries, so you can connect to various regions of the world safely, stably and quickly no matter where you are.</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="row mt-4">
+	<h2>Price</h2>
+	{% include './components/price_label.html' %}
+</div>
+
+
 {% endblock %}
