@@ -5,6 +5,13 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+STRIPE_TEST_PUBLIC_KEY = 'pk_test_514R43pIJ9D0sMQ8MCkkhOeJJ8L9tHOTdrKFOlPI5xo2U8K2BmLyenuLcpMKivkk1gmxcN73ZUCHWT8RLjf2BBYru00DyhzN3ft'
+STRIPE_TEST_SECRET_KEY = 'sk_test_514R43pIJ9D0sMQ8MfRux9LgS9rNGuwwWRhbu5HiThR3cXwJC29zCIPwa0vS5xTXn3Josi41N2ss5ZbbPZV7ATQ9C00qk6IP3QL'
+
+PAYPAL_CLIENT_ID = 'ASl7ZiFhRcXTxxkNy_8D3iODAwKO150IWTezWzax9aEns8S_BxUBOXWuES82CWR9REEofblSYAzyeis8'
+PAYPAL_CLIENT_SECRET = 'EK5Sa0qZb_Y4c-xLkKbz7NjCBkhLFlwkmt1ZVlbdB71UmNRJYeLWfoEoxNSUevg71-cNSTZ3o7s1065G'
+
+
 SERVER_CONFIG = {
     'USER': os.getenv('SERVER_CONFIG_USER'),
     'PEM_FOLDER_PATH': os.path.join(os.path.dirname(__file__), '..', 'pem'),
@@ -46,6 +53,7 @@ INSTALLED_APPS = [
     'users',
     'cluster',
     'IP_resource',
+    'payment_paypal',
 ]
 
 MIDDLEWARE = [
@@ -142,9 +150,9 @@ LOCALE_PATHS = [
 
 # Static files (CSS, JavaScript, Images)
 STATIC_URL = '/static/'
-# STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 # use this static folder for img, js and css, be careful chmod 777 for folder static
-STATIC_ROOT = '/var/www/link2globe.com/static'
+# STATIC_ROOT = '/var/www/link2globe.com/static'
 
 # Compressor settings
 COMPRESS_ROOT = STATIC_ROOT
