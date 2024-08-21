@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'users',
     'cluster',
     'IP_resource',
+    'payment_stripe',
 ]
 
 MIDDLEWARE = [
@@ -205,3 +206,8 @@ EMAIL_PORT = 587  # SMTP 服务器端口
 EMAIL_USE_TLS = True  # 是否使用 TLS 加密
 EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')  # SMTP 用户名
 EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')  # SMTP 密码
+
+# Stripe Payment
+STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY')
+STRIPE_WEBHOOK_SECRET = os.getenv('STRIPE_WEBHOOK_SECRET')
+
