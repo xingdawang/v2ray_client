@@ -11,6 +11,30 @@
 						<p class="card-text text-center">Each exclusive pure family IP.</p>
 						<p class="card-text text-center paragraph-divider">Free 10GB of data per month</p>
 						<p class="card-text text-center">€19 / Month</p>
+						<br>
+						
+						<p class="card-text">Pay with</p>
+						<div class="row align-items-center">
+							<div class="col text-center">
+								<form action="{% url 'create_payment_link' 1 %}" method="POST">
+									{% csrf_token %}
+									 <button type="submit" class="btn btn-outline-primary btn-block btn-payment-custom" name="payment_method" value="card">Credit / Debit Card</button>
+								</form>
+							</div>
+							<div class="col text-center">
+								<form action="{% url 'create_payment_link' 1 %}" method="POST">
+									{% csrf_token %}
+									<button type="submit" class="btn btn-outline-success btn-block btn-payment-custom" name="payment_method" value="wechat_pay">WeChat Pay</button>
+								</form>
+							</div>
+							<div class="col text-center">
+								<form action="{% url 'create_payment_link' 1 %}" method="POST">
+									{% csrf_token %}
+									<button type="submit" class="btn btn-outline-info btn-block btn-payment-custom" name="payment_method" value="paypal">PayPal</button>
+								</form>
+							</div>
+						</div>
+
 					</div>
 				</div>
 			</div>
@@ -25,6 +49,29 @@
 						<p class="card-text text-center paragraph-divider">Free 10GB of data per month</p>
 						<p class="card-text text-center"><span class="text-decoration-line-through">€228 / Year</span></p>
 						<p class="card-text text-center">€180 / Year</p>
+
+						<p class="card-text">Pay with</p>
+						<div class="row align-items-center">
+							<div class="col text-center">
+								<form action="{% url 'create_payment_link' 2 %}" method="POST">
+									{% csrf_token %}
+									 <button type="submit" class="btn btn-outline-primary btn-block btn-payment-custom" name="payment_method" value="card">Credit / Debit Card</button>
+								</form>
+							</div>
+							<div class="col text-center">
+								<form action="{% url 'create_payment_link' 2 %}" method="POST">
+									{% csrf_token %}
+									<button type="submit" class="btn btn-outline-success btn-block btn-payment-custom" name="payment_method" value="wechat_pay">WeChat Pay</button>
+								</form>
+							</div>
+							<div class="col text-center">
+								<form action="{% url 'create_payment_link' 2 %}" method="POST">
+									{% csrf_token %}
+									<button type="submit" class="btn btn-outline-info btn-block btn-payment-custom" name="payment_method" value="paypal">Paypal</button>
+								</form>
+							</div>
+						</div>
+
 					</div>
 				</div>
 			</div>
@@ -32,13 +79,36 @@
 			<div class="col-sm-4">
 				<div class="card">
 					<div class="card-body">
-						<h3 class="card-title text-center">2 Year</h3>
+						<h3 class="card-title text-center">2 Years</h3>
 						<p class="card-text price-highlight text-center">€12.5</p>
 						<p class="card-text text-center">Every Month</p>
 						<p class="card-text text-center">Each exclusive pure family IP.</p>
 						<p class="card-text text-center paragraph-divider">Free 10GB of data per month</p>
 						<p class="card-text text-center"><span class="text-decoration-line-through">€456 / Year</span></p>
 						<p class="card-text text-center">€300 / Year</p>
+
+						<p class="card-text">Pay with</p>
+						<div class="row align-items-center">
+							<div class="col text-center">
+								<form action="{% url 'create_payment_link' 3 %}" method="POST">
+									{% csrf_token %}
+									 <button type="submit" class="btn btn-outline-primary btn-block btn-payment-custom" name="payment_method" value="card">Credit / Debit Card</button>
+								</form>
+							</div>
+							<div class="col text-center">
+								<form action="{% url 'create_payment_link' 3 %}" method="POST">
+									{% csrf_token %}
+									<button type="submit" class="btn btn-outline-success btn-block btn-payment-custom" name="payment_method" value="wechat_pay">WeChat Pay</button>
+								</form>
+							</div>
+							<div class="col text-center">
+								<form action="{% url 'create_payment_link' 3 %}" method="POST">
+									{% csrf_token %}
+									<button type="submit" class="btn btn-outline-info btn-block btn-payment-custom" name="payment_method" value="paypal">Paypal</button>
+								</form>
+							</div>
+						</div>
+
 					</div>
 				</div>
 			</div>
@@ -54,6 +124,29 @@
 						<p class="card-text text-center">High-bandwidth, low-jitter live broadcast network.</p>
 						<p class="card-text text-center paragraph-divider">Free 100GB of data per month</p>
 						<p class="card-text text-center">€99 / Month</p>
+
+						<p class="card-text">Pay with</p>
+						<div class="row align-items-center">
+							<div class="col text-center">
+								<form action="{% url 'create_payment_link' 4 %}" method="POST">
+									{% csrf_token %}
+									 <button type="submit" class="btn btn-outline-primary btn-block btn-payment-custom" name="payment_method" value="card">Credit / Debit Card</button>
+								</form>
+							</div>
+							<div class="col text-center">
+								<form action="{% url 'create_payment_link' 4 %}" method="POST">
+									{% csrf_token %}
+									<button type="submit" class="btn btn-outline-success btn-block btn-payment-custom" name="payment_method" value="wechat_pay">WeChat Pay</button>
+								</form>
+							</div>
+							<div class="col text-center">
+								<form action="{% url 'create_payment_link' 4 %}" method="POST">
+									{% csrf_token %}
+									<button type="submit" class="btn btn-outline-info btn-block btn-payment-custom" name="payment_method" value="paypal">Paypal</button>
+								</form>
+							</div>
+						</div>
+
 					</div>
 				</div>
 			</div>
@@ -63,11 +156,36 @@
 					<div class="card-body">
 						<h3 class="card-title text-center">10 GB</h3>
 						<p class="card-text price-highlight text-center">€3</p>
+						<br>
+						<br>
 						<p class="card-text text-center">Every Month</p>
 						<br>
 						<br>
 						<p class="paragraph-divider"></p>
 						<p class="card-text text-center">€3 / Month / 10GB</p>
+
+						<p class="card-text">Pay with</p>
+						<div class="row align-items-center">
+							<div class="col text-center">
+								<form action="{% url 'create_payment_link' 5 %}" method="POST">
+									{% csrf_token %}
+									 <button type="submit" class="btn btn-outline-primary btn-block btn-payment-custom" name="payment_method" value="card">Credit / Debit Card</button>
+								</form>
+							</div>
+							<div class="col text-center">
+								<form action="{% url 'create_payment_link' 5 %}" method="POST">
+									{% csrf_token %}
+									<button type="submit" class="btn btn-outline-success btn-block btn-payment-custom" name="payment_method" value="wechat_pay">WeChat Pay</button>
+								</form>
+							</div>
+							<div class="col text-center">
+								<form action="{% url 'create_payment_link' 5 %}" method="POST">
+									{% csrf_token %}
+									<button type="submit" class="btn btn-outline-info btn-block btn-payment-custom" name="payment_method" value="paypal">Paypal</button>
+								</form>
+							</div>
+						</div>
+
 					</div>
 				</div>
 			</div>
