@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-23 15:35+0100\n"
+"POT-Creation-Date: 2024-08-25 18:15+0100\n"
 "Language: zh_Hans\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 
@@ -158,6 +158,74 @@ msgstr "配置链接"
 msgid "Protocal Configs"
 msgstr "配置协议"
 
+#: payment_stripe/apps.py:7
+msgid "Stripe Payment"
+msgstr "Stripe 支付"
+
+#: payment_stripe/models.py:6
+msgid "Product Name"
+msgstr "产品名称"
+
+#: payment_stripe/models.py:7
+msgid "Product Price"
+msgstr "产品价格"
+
+#: payment_stripe/models.py:10 payment_stripe/models.py:18
+msgid "Product"
+msgstr "产品"
+
+#: payment_stripe/models.py:11
+msgid "Products"
+msgstr "产品"
+
+#: payment_stripe/models.py:17 users/apps.py:8
+msgid "User"
+msgstr "客户"
+
+#: payment_stripe/models.py:19
+msgid "Checkout Session ID"
+msgstr "Checkout Session ID"
+
+#: payment_stripe/models.py:20
+msgid "Payment Intent"
+msgstr "Payment Intent"
+
+#: payment_stripe/models.py:21
+msgid "Status"
+msgstr "状态"
+
+#: payment_stripe/models.py:22
+msgid "Payment Amount"
+msgstr "付款金额"
+
+#: payment_stripe/models.py:23
+msgid "Payment Currency"
+msgstr "付款汇率"
+
+#: payment_stripe/models.py:24
+msgid "Create Time"
+msgstr "创建时间"
+
+#: payment_stripe/models.py:25
+msgid "Payer Email"
+msgstr "付款人邮箱"
+
+#: payment_stripe/models.py:26
+msgid "Payer Name"
+msgstr "付款人姓名"
+
+#: payment_stripe/models.py:27
+msgid "Payment Method"
+msgstr "付款方式"
+
+#: payment_stripe/models.py:30
+msgid "Stripe Payment Record"
+msgstr "Stripe 付款记录"
+
+#: payment_stripe/models.py:31
+msgid "Stripe Payment Records"
+msgstr "Stripe 付款记录"
+
 #: users/admin.py:18
 msgid "Customer Profile"
 msgstr "客户信息"
@@ -169,10 +237,6 @@ msgstr ""
 #: users/admin.py:24
 msgid "Important dates"
 msgstr ""
-
-#: users/apps.py:8
-msgid "User"
-msgstr "客户"
 
 #: users/models.py:10
 msgid "Customer Group"
