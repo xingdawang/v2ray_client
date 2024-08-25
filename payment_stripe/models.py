@@ -16,7 +16,7 @@ class StripePaymentLink(models.Model):
     status = models.CharField(max_length=50, null=True)
     amount_total = models.DecimalField(max_digits=10, null=True, decimal_places=2)
     currency = models.CharField(max_length=10, null=True)
-    created = models.DateTimeField(auto_now_add=True, null=True)
+    created = models.DateTimeField(null=True)
     payer_email = models.EmailField(null=True)
     payer_name = models.CharField(max_length=255, null=True)
     payment_method = models.CharField(max_length=50, null=True)

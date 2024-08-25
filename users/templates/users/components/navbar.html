@@ -29,6 +29,7 @@
             Profile</a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="/profile">Profile</a></li>
+            <li><a class="dropdown-item" href="{% url 'payment_history' %}">Payment History</a></li>
             <li><a class="dropdown-item" href="/edit_profile">Edit Profile</a></li>
             <li class="nav-item">
               <form method="POST" action="{% url 'users:logout' %}">

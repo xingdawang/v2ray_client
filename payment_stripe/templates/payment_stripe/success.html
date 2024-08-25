@@ -1,9 +1,9 @@
 {% extends 'users/base.html' %}
 
-{% block title %}Log in{% endblock %}
+{% block title %}Payment Succeed{% endblock %}
 
 {% block content %}
 
 <h1>Payment Successful!</h1>
-<p>Thank you for your purchase.</p>
+<p>Thank you for your purchase. You can view the payment records: <a href="{% url 'payment_history' %}">here</a></p>
 {% endblock %}
