@@ -1,4 +1,4 @@
-Django==5.0.7
+Django==5.0.9
 django-dal==1.0.0
 django-crontab>=0.7.1
 django-compressor>=4.5
